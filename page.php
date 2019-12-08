@@ -25,7 +25,7 @@
             <div class="lpitem">
                 <div class="lpthumb"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a></div>
                 <div class="lpmeta">
-                    <div class="postcategory"><a href=""><?php the_category(' '); ?></a></div>
+                    <div class="postcategory"><?php the_category(' '); ?></div>
                     <br>
                     <a href="<?php the_permalink(); ?>"><h2 class="box"><?php the_title(); ?></h2></a>
                     <div class="lpmetainfo"><p><?php the_author(); ?> | <?php echo get_the_date(); ?></p></div>

@@ -8,7 +8,7 @@
             if ( in_category( '7' ) ){ the_post_thumbnail('large'); }           else { the_post_thumbnail('thumbnail'); } 
             ?></div>
         <div class="blogtitle">
-            <div class="postcategory"><a href="#"><?php the_category(' '); ?></a></div>
+            <div class="postcategory"><?php the_category(' '); ?></div>
             <div class="blogtitleh1"><h1><?php the_title(); ?></h1></div>
             <div class="blogmetainfo"><?php the_author(); ?> | <?php the_date(); ?></p></div>
         </div>
@@ -48,7 +48,7 @@
             <div class="lpitem">
                 <div class="lpthumb"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a></div>
                 <div class="lpmeta">
-                    <div class="postcategory"><a href=""><?php the_category(' '); ?></a></div>
+                    <div class="postcategory"><?php the_category(' '); ?></div>
                     <br>
                     <a href="<?php the_permalink(); ?>"><h2 class="box"><?php the_title(); ?></h2></a>
                     <div class="lpmetainfo"><p><?php the_author(); ?> | <?php echo get_the_date(); ?></p></div>

@@ -31,11 +31,13 @@ $cat_posts = new WP_Query( $args );
                     </a>
                 </div>
                   <div class="cat_desc">
-                    <div class="postcategory"><a href=""><?php the_category(' '); ?></a></div>
-                    <a href="<?php the_permalink(); ?>"><h3 class="cat_title"><?php the_title(); ?></h3></a>
-                    <div class="cat_meta"><p><?php the_author(); ?> | 
-                    <?php echo get_the_date(); ?></p></div>
-                    <div class="excerpt cat_excerpt"><?php echo wp_trim_words( get_the_content(), 50, '...' ); ?><a href="<?php the_permalink(); ?>"> (read&nbspmore)</a></div>
+                    <div class="postcategory">
+                        <?php the_category(' '); ?>
+                        <a href="<?php the_permalink(); ?>"><h3 class="cat_title"><?php the_title(); ?></h3></a>
+                        <div class="cat_meta"><p><?php the_author(); ?> | 
+                        <?php echo get_the_date(); ?></p></div>
+                        <div class="excerpt cat_excerpt"><?php echo wp_trim_words( get_the_content(), 50, '...' ); ?><a href="<?php the_permalink(); ?>"> (read&nbspmore)</a></div>
+                    </div>
                 </div>
             </div>
             <?php endwhile; endif; wp_reset_postdata(); ?>

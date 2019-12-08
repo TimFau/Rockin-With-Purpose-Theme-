@@ -1,0 +1,106 @@
+/* ------------------------------------------------------------------------------------------------------------------------------
+  Header
+--------------------------------------------------------------------------------------------------------------------------------- */
+.navbar {
+    padding: 35px 0px;
+    margin-bottom: 20px;
+    border-bottom: 6px solid #cccccc;
+    background-color: black;
+    //background: url(../../img/black_paper.png);
+    box-shadow: 0 0 5px black;
+    @media screen and (min-width: 900px) {
+        width: 100%;
+        display: inline-block;
+        padding: 5px 0 8px 0;
+        padding:0;
+        margin-bottom: 16px;
+    }
+}
+.navlogo {
+    width: 140px;
+    margin: 0 auto;
+    max-width: 17%;
+    @media screen and (min-width: 900px) {
+        float: left;
+        margin-left: 2.5%;
+        padding: 1% 0;
+    }
+}
+/* Navigation */
+nav.navbar {
+    ul.sub-menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        padding-left: 0;
+        background: black;
+        z-index: 1;
+        box-shadow: 6px 12px 25px black;
+        li {
+            display: block;
+            &:hover {
+                background: black;
+            }
+            a{
+                color: white;
+                white-space: nowrap;
+            }
+        }
+    }
+    li {
+        position: relative;
+        &:hover {
+            a {
+                color: #d01d33;
+            }
+            .sub-menu {
+                display: block;
+            }
+        }
+        a {
+            text-align: center;
+            transition: 0.3s;
+            font-size: 20px;
+            margin: 10px;
+        }
+        @media screen and (min-width: 900px) {
+            display: inline-block;
+            margin-right: 0px;
+            padding: 8px 4px;
+        }
+    }
+    .followBTN {
+        display: none;
+        @media screen and (min-width: 900px) {
+            height: 35px;
+            color: white;
+            width: 50%;
+            float: right;
+            padding-right: 15px;
+            img {
+                width: auto;
+                float: right;
+                &:hover {
+                    opacity: .8;
+                }
+            }
+        }
+    }
+    .navigation {
+        @media screen and (min-width: 900px) {
+            width: 80%;
+            display: inline-block;
+            padding: 2% 0;
+            li a {
+                color: white;
+                text-transform: uppercase;
+                font-size: 18px;
+                font-weight: 600;
+                &:hover {
+                    color: #d41733;
+                }
+            }
+            
+        }
+    }
+} // end navbar

@@ -56,8 +56,12 @@
                     <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
                 </div>
                 <div class="recent_desc">
-                    <div class="postcategory"><a href="#"><?php the_category(' '); ?></a></div>
-                    <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+                    <div class="postcategory">
+                        <?php the_category(' '); ?>
+                    </div>
+                    <a href="<?php the_permalink(); ?>">
+                        <h2><?php the_title(); ?></h2>
+                    </a>
                     <p><?php the_excerpt(); ?></p>
                 </div>
     </div>
