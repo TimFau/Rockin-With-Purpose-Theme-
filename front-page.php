@@ -17,8 +17,9 @@
 <div class="featuredcontent">
     <?php 
     $do_not_duplicate = array();
-    if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post(); $do_not_duplicate[] = $post->ID; ?>
-    <div class="ft_content">
+	$ft_ct = 0;
+    if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post(); $do_not_duplicate[] = $post->ID; $ft_ct++; ?>
+    <div class="ft_content ct-<?php echo $ft_ct ?>">
         <div class="item">
             <div class="_img">
                 <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'thumbnail' ); ?></a>
@@ -120,3 +121,23 @@
 
 </div>
 <?php get_footer(); ?>
+
+<script>
+jQuery( document ).ready(function() {
+	/* Column equalizer for hp featured section */
+	function ftEqual() {
+		var maxHeight = 0;
+        jQuery(".ft_content.ct-2, .ft_content.ct-3, .ft_content.ct-4, .ft_content.ct-5").each(function(){
+            if (jQuery(this).height() > maxHeight) { maxHeight = jQuery(this).height(); }
+        });
+		if(maxHeight > 0) {
+			jQuery(".ft_content.ct-2, .ft_content.ct-3, .ft_content.ct-4, .ft_content.ct-5").height(maxHeight);
+		} 
+    }
+    ftEqual();
+	jQuery(window).resize(function() {
+		jQuery(".ft_content.ct-2, .ft_content.ct-3, .ft_content.ct-4, .ft_content.ct-5").height('auto');
+		ftEqual();
+	});
+});
+</script>
