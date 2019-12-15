@@ -60,7 +60,6 @@ nav.navbar {
         a {
             text-align: center;
             transition: 0.3s;
-            font-size: 20px;
             margin: 10px;
         }
         @media screen and (min-width: 900px) {
@@ -94,7 +93,6 @@ nav.navbar {
             li a {
                 color: white;
                 text-transform: uppercase;
-                font-size: 18px;
                 font-weight: 600;
                 &:hover {
                     color: #d41733;

@@ -29,16 +29,16 @@ function rwp_theme_js() {
 }
 
 add_action( 'wp_enqueue_scripts', 'rwp_theme_js' );
-// Changing excerpt length
-function new_excerpt_length($length) {
-return 11;
+//Changing excerpt length
+function get_excerpt(){
+    $excerpt = get_the_content();
+    $excerpt = preg_replace(" ([.*?])",'',$excerpt);
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $excerpt = substr($excerpt, 0, 105);
+    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+    $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+    $excerpt = $excerpt.'...';
+    return $excerpt;
 }
-add_filter('excerpt_length', 'new_excerpt_length');
-// Replaces the excerpt "Read More" text by a link
-function new_excerpt_more($more) {
-       global $post;
-	return '...';
-}
-add_filter('excerpt_more', 'new_excerpt_more');
-
 ?>

@@ -8,8 +8,8 @@
 <?php
     $args = array(
         'post_type' => 'post',
-        'posts_per_page'   => 5,
-        'category_name' =>  'featured'
+        'posts_per_page'   => 1,
+        'category_name' =>  'featured',
     );
     $query = new WP_Query( $args );
 ?>
@@ -21,15 +21,22 @@
     if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post(); $do_not_duplicate[] = $post->ID; $ft_ct++; ?>
     <div class="ft_content ct-<?php echo $ft_ct ?>">
         <div class="item">
-            <div class="_img">
-                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'thumbnail' ); ?></a>
-            </div>
-            <div class="ft_desc">
-                <!-- Add to Livesite -->
-                <div class="postcategory"><?php the_category(' '); ?></div>
-                <!-- ^Add to Livesite^ -->
-                <a href="<?php the_permalink(); ?>"><h2 class="box"><?php the_title(); ?></h2></a>
-            </div>
+            <a href="<?php the_permalink(); ?>">
+                <?php the_post_thumbnail( 'thumbnail' ); ?>
+            </a>
+                <div class="ft_desc">
+                    <div class="postcategory">
+                        <?php the_category(' '); ?>
+                    </div>
+                    <a href="<?php the_permalink(); ?>">
+                        <h2 class="box"><?php the_title(); ?></h2>
+                        <?php 
+                            $ft_short_desc = wp_trim_words( get_the_content(), 40, '...' );
+                        ?>
+                        <p class="short_desc"><?php echo $ft_short_desc; ?></p>
+                        <button class="read-more">Read More</button>
+                    </a>
+                </div>
         </div>
     </div>
     <?php endwhile; endif; wp_reset_postdata(); ?>
@@ -62,7 +69,7 @@
                     <a href="<?php the_permalink(); ?>">
                         <h2><?php the_title(); ?></h2>
                     </a>
-                    <p><?php the_excerpt(); ?></p>
+                    <p><?php echo get_excerpt(); ?></p>
                 </div>
     </div>
     <?php endwhile; endif; wp_reset_postdata(); ?>

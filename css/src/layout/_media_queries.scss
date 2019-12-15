@@ -1,0 +1,169 @@
+// Media Queries
+// To be removed as I refactor the css
+
+@media screen and (min-width:900px) {
+    h3.hpheading_hp, h2.hpheading {
+        text-shadow: 1px 1px 1px black;
+        font-weight: 600;
+    }
+    /* General Layout/Etc. */
+    .not_featured {
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+    .contentarea {
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+    .invisible {
+        width: 100%;
+        display: inline-block;
+    }
+    .dhide {
+        display: none;
+    }
+    .mnone {
+        display: block;
+    }
+    .hpheading {
+        color: #333333;
+        text-align: left;
+        background: none;
+        border-top: 0px;
+        border-bottom: 0px;
+        padding: 30px 0px 10px 0px;
+        margin: 0 0;
+}
+    .post p {
+        padding-right: 50px;
+    }
+    /* ------------------------------------------
+    Featured Content Area -TF
+    --------------------------------------------- */
+    .ft_content {
+        ._img {
+            width: 66%;
+            display: inline-block;
+        }
+    }
+
+    /* ------------------------------------------
+      Recent News & Features -TF
+    --------------------------------------------- */
+    .recentnews {
+        text-align: justify;
+        position: relative;
+    }
+    .recent_item {
+        width: 32.5%;
+        height: 32.5%;
+        display: inline-block;
+        text-align: left;
+    }
+    .l_container {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        width: 100%;
+        margin-top: 25px;
+    }
+    .hpheading {
+        position: relative;
+        display: inline-block;
+        padding-right: 20px;
+        text-transform: uppercase;
+    }
+    .hpheading::after {
+        content: "";
+        display: block;
+        height: 6px;
+        position: absolute;
+        width: 1920px;
+        margin-top: 7px;
+        top: 50%;
+        left: 100%;
+        background-color: #333333;
+        box-shadow: 1px 1px 1px black;
+    }
+    .headingbox {
+        padding-bottom: 15px;
+        overflow: hidden;
+    }
+    .headingbox p {
+        color: #666666;
+        text-transform: uppercase;
+        font-weight: 600;
+        padding-top: 5px;
+    }
+    /* ------------------------------------------
+      New Releases -TF
+    --------------------------------------------- */
+    .album {
+        width: 19%;
+        height: 19%;
+        margin-right: 1.25%;
+        position: relative;
+    }
+    .album:nth-of-type(6) {
+        margin-right: 0%;
+    }
+    .albumdesc {
+        top: 30%;
+        left: 20%;
+        display: none;
+    }
+    .album:nth-child(7) {
+        display: none;
+    }
+    /* ------------------------------------------
+      Upcoming Artists -TF
+    --------------------------------------------- */
+    .upcomingartist {
+        width: 32.5%;
+        height: 32.5%;
+        margin-right: 1.25%;
+        float: left;
+    }
+    .upcomingartist:nth-of-type(4) {
+        margin-right: 0;
+    }
+    .upcomingartist img {
+        width: 100%;
+        height: 100%;
+    }
+    .ua_desc {
+        width: 100%;
+        padding-bottom: 0px;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+    .ua_desc h2 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .featuredcontent .postcategory a {
+        display: none;
+    }
+}
+
+ /* ------------------------------------------
+      1200px+ -TF
+--------------------------------------------- */
+@media screen and (min-width:1300px) {
+    .featuredcontent, .not_featured, .navbar .container, .cat_header_post_float, #blogcontentarea {
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .contentarea {
+        display: block;
+    }
+    .navlogo {
+        margin: 3px 0 0 .5%;
+    }
+    .navigation {
+        margin: 15px 0 0 0;
+    }
+}

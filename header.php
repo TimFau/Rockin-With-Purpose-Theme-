@@ -14,7 +14,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body id="bootstrap-overrides">
+<body>
     <!-- Header & Navigation -->
     <nav class="navbar">
         <div class="container">

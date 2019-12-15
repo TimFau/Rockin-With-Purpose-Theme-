@@ -4,14 +4,11 @@
 a {
     color: inherit;
 }
-#blogcontentarea h1 {
-    font-size: 25px;
-    font-weight: bold;
-    color: white;
-}
-#blogcontentarea h3 {
-    font-size: 28px;
-    letter-spacing: -.5px;
+#blogcontentarea {
+    h1 {
+        font-weight: bold;
+        color: white;
+    }
 }
 .header_post_float h3 {
     margin: 25px 0 -10px 0px;
@@ -23,10 +20,6 @@ a {
 #blogcontentarea img {
     width: 100%;
     height: 100%;
-}
-/* Sidebar/Widgets Heading Sizes */
-.relatedcontent h2, .latestposts h2 {
-    font-size: 1.2em;
 }
 
 
@@ -153,9 +146,6 @@ a {
 .latestposts p {
     text-shadow: 2px 1px black;
 }
-#blogcontentarea .hpheading {
-    /* display: block; */
-}
 #blogcontentarea .hpheading h3 {
     position: relative;
     display: inline-block;
@@ -176,32 +166,13 @@ a {
 }
 .relatedcontent p {
     color: white;
-    font-size: 12px;
 }
-
 
 /*----------------------------------------------------------------------------------------------------
 
     MEDIA QUERIES
 
 ----------------------------------------------------------------------------------------------------*/
-@media screen and (min-width:600px) {
-    h1 {
-        font-size: 39px;
-    }
-    .relatedcontent h2 {
-        font-size:  34px;
-    }
-    .relatedcontent p {
-        font-size: 14px;
-    }
-    .post p, .page p {
-        font-size: 1.1em;
-    }
-    #blogcontentarea h1 {
-    font-size: 2em;
-}
-}
 
 @media screen and (min-width:900px) {
     /* Blog Area */
@@ -209,7 +180,6 @@ a {
         padding: 0 2.5%;
     }
     #blogcontentarea .header_post_float p {
-        font-size: 16px;
         line-height: 2.2em;
     }
     #blogcontentarea .header_post_float {
@@ -230,7 +200,6 @@ a {
         padding: 0px 0px 0px 0px;
     }
     #blogcontentarea h1 {
-        font-size: 2.5em;
         padding-right: 20px;
 }
     
@@ -253,14 +222,11 @@ a {
     .relatedcontent {
         padding: 0 3%;
     }
-    .recent_item h2 {
-        font-size: 25px;
-    }
     .recent_item:nth-of-type(1n + 5) {
         margin-top: .65%;
     }
     .recent_item:nth-of-type(3n + 2), .recent_item:nth-of-type(3n + 3) {
-    margin-right: .65%;
+        margin-right: .65%;
     }
     /* Category Page */
     .cat_latestposts {

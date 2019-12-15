@@ -1,0 +1,161 @@
+/* ------------------------------------------------------------------------------------------------------------------------------
+  Featured Content Area
+--------------------------------------------------------------------------------------------------------------------------------- */
+.featuredcontent {
+    margin-top: -15px;
+    overflow: hidden;
+    h2 {
+        font-size: $fs-large;
+        margin-top: 10px;
+    }
+}
+.ft_content {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    padding: 0 0;
+    margin: 0 0;
+    img {
+        width: 66%;
+        @media screen and (max-width: 720px) {
+            width: 100%;
+        }
+    }
+    &:first-child h2 {
+        margin-bottom: 10px;
+    }
+    @media screen and (max-width: 980px) {
+        p {
+            display: none;
+        }
+    }
+}
+.ft_content:hover .ft_desc, .content:hover .desc {
+    transform: rotate(-2deg);
+    background: black;
+    opacity: 0.8;
+    transition: 1s;
+}
+.ft_desc {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 15px;
+    display: inline-block;
+    background: #000;
+    width: 34%;
+    height: 100%;
+    padding-top: 20px;
+    box-sizing: border-box;
+    @media screen and (max-width: 720px) {
+        width: 100%;
+        height: auto;
+        background: #000000e6;
+        padding-bottom: 20px;
+        h2 {
+            font-size: $fs-medium;
+        }
+    }
+    .ft_content:hover & {
+        transform: none;
+        opacity: 1;
+    }
+}
+.ft_content:hover img, .content:hover img {
+    transform: scale(1.1);
+    transition: 1s;
+}
+.postcategory a {
+    color: white;
+}
+/* ------------------------------------------------------------------------------------
+    Remaining content general styles
+ --------------------------------------------------------------------------------------- */
+.not_featured {
+    clear: both;
+}
+/* ------------------------------------------
+  Recent Content
+--------------------------------------------- */
+.recent_item {
+    position: relative;
+    overflow: hidden;
+}
+.recent_desc {
+    position: absolute;
+    bottom: 0;
+    padding: 8px 8px 0 8px;
+    background: black;
+    opacity: 0.8;
+    width: 100%;
+    box-sizing: border-box;
+}
+.recent_desc h2 {
+    margin: 8px 0 0 0;
+}
+.recent_desc p {
+    margin: 0 0 5px 0;
+}
+.recent_desc .postcategory a {
+    margin-top: 100px;
+}
+/* Transformation Effects */
+ .recent_item:hover .ri_img img {
+        transform:  scale(1.05);
+        transition: 1s;
+    }  
+.recent_item:hover .recent_desc {
+    opacity: .9;
+    transition: 1s;
+}
+/* ------------------------------------------
+  New Releases
+--------------------------------------------- */
+.newreleases {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+.album {
+    width: 50%;
+    float: left;
+    overflow: hidden;
+}
+.albumdesc {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    display: none;
+}
+/* Transformation Effects */
+.album:hover img {
+    transform: scale(1.1);
+    transition: 1s;
+}
+/* ------------------------------------------
+  Upcoming Artists
+--------------------------------------------- */
+.upcomingartist {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+}
+.ua_desc {
+    position: absolute;
+    bottom: 0;
+    padding: 0 10px;
+    width: 100%;
+}
+/* Transformation Effects */
+.upcomingartist:hover img {
+    transform: scale(1.1);
+    transition: 1s;
+    }
+ .upcomingartist:hover .ua_desc {
+    transform: rotate(-2deg);
+    background: black;
+    transition: 1s;
+}

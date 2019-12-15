@@ -25,7 +25,7 @@
     color: #666666;
 }
 #category .cat_excerpt a {
-    color: #993333;
+    color: $red;
     text-decoration: underline;
 }
 .cat_excerpt p {
@@ -74,7 +74,6 @@
         margin-right: 5%;
     }
     #category .cat_meta p {
-        font-size: 14px;
         color: #666;
     }
     /* Hover Effects */
