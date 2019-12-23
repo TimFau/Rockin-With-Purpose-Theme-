@@ -1,7 +1,7 @@
 // Media Queries
 // To be removed as I refactor the css
 
-@media screen and (min-width:900px) {
+@media screen and ($bp-960-min) {
     h3.hpheading_hp, h2.hpheading {
         text-shadow: 1px 1px 1px black;
         font-weight: 600;
@@ -55,12 +55,6 @@
         text-align: justify;
         position: relative;
     }
-    .recent_item {
-        width: 32.5%;
-        height: 32.5%;
-        display: inline-block;
-        text-align: left;
-    }
     .l_container {
         position: relative;
         display: inline-block;
@@ -97,26 +91,6 @@
         padding-top: 5px;
     }
     /* ------------------------------------------
-      New Releases -TF
-    --------------------------------------------- */
-    .album {
-        width: 19%;
-        height: 19%;
-        margin-right: 1.25%;
-        position: relative;
-    }
-    .album:nth-of-type(6) {
-        margin-right: 0%;
-    }
-    .albumdesc {
-        top: 30%;
-        left: 20%;
-        display: none;
-    }
-    .album:nth-child(7) {
-        display: none;
-    }
-    /* ------------------------------------------
       Upcoming Artists -TF
     --------------------------------------------- */
     .upcomingartist {
@@ -140,12 +114,6 @@
     }
     .ua_desc h2 {
         text-align: center;
-    }
-}
-
-@media screen and (max-width:1000px) {
-    .featuredcontent .postcategory a {
-        display: none;
     }
 }
 

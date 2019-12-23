@@ -19,7 +19,7 @@ function register_theme_menus() {
 add_action( 'init', 'register_theme_menus' );
 
 function rwp_theme_styles() {
-    wp_enqueue_style( 'style_css', get_template_directory_uri() . '/css/dest/styles.min.css' );
+    wp_enqueue_style( 'style_css', get_template_directory_uri() . '/style.min.css' );
 }
 add_action( 'wp_enqueue_scripts', 'rwp_theme_styles' );
 

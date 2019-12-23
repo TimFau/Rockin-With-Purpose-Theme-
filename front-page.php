@@ -4,7 +4,7 @@
 ?>
 
 <?php get_header(); ?>
-<div class="contentarea">
+<div class="contentarea home">
 <?php
     $args = array(
         'post_type' => 'post',
@@ -22,7 +22,7 @@
     <div class="ft_content ct-<?php echo $ft_ct ?>">
         <div class="item">
             <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail( 'thumbnail' ); ?>
+                <?php the_post_thumbnail( 'large' ); ?>
             </a>
                 <div class="ft_desc">
                     <div class="postcategory">
@@ -45,7 +45,7 @@
 <?php
     $args = array(
         'post_type' =>  'post',
-        'posts_per_page'   => 3,
+        'posts_per_page'   => 4,
         'post__not_in' => $do_not_duplicate,
         'category__not_in'  => array( 5 )
     );
@@ -54,8 +54,7 @@
 <div class="not_featured">
 <section class="recentnews l_container">
     <div class="headingbox">
-        <h3 class="hpheading hpheading_hp">Recent Content<br class="dhide"><i class="material-icons dhide">keyboard_arrow_down</i></h3>
-        <p class="mnone">Recent news and content from around the site</p>
+        <h3 class="hpheading hpheading_hp">Recent Content<i class="material-icons dhide">keyboard_arrow_down</i></h3>
     </div>
     <?php if( $query_rn->have_posts() ) : while( $query_rn->have_posts() ) : $query_rn->the_post(); ?>
     <div class="recent_item">
@@ -73,14 +72,13 @@
                 </div>
     </div>
     <?php endwhile; endif; wp_reset_postdata(); ?>
-    <div class="invisible"></div>
 </section>
 <?php
     
     $args = array(
         'post_type' => 'post',
         'category_name' =>  'albums',
-        'posts_per_page'   => 6,
+        'posts_per_page'   => 4,
     );
     $query_nr = new WP_Query( $args );
 ?>
@@ -88,8 +86,9 @@
 <!-- New Releases -->
 <section class="newreleases l_container">
         <div class="headingbox">
-            <h3 class="hpheading hpheading_hp">Album Spotlight<br class="dhide"><i class="material-icons dhide">keyboard_arrow_down</i></h3>
-            <p class="mnone">Check out these album spotlights from some amazing artists</p>
+            <a href="category/albums/">
+            <h3 class="hpheading hpheading_hp">Album Spotlight<i class="material-icons dhide">keyboard_arrow_down</i></h3>
+            </a>
         </div>
         <?php if( $query_nr->have_posts() ) : while( $query_nr->have_posts() ) : $query_nr->the_post(); ?>
         <div class="album">
@@ -97,7 +96,6 @@
             <div class="albumdesc"><a href="<?php the_permalink(); ?>"><h2>view</h2></a></div>
         </div> 
         <?php endwhile; endif; wp_reset_postdata(); ?>
-        <div class="invisible"></div>
 </section>
     
 <?php
@@ -113,8 +111,9 @@
 <!-- Upcomming artists -->
 <section class="upcoming l_container">
         <div class="headingbox">
+            <a href="category/artist-spotlight/">
             <h3 class="hpheading hpheading_hp">Artist Spotlight<br class="dhide"><i class="material-icons dhide">keyboard_arrow_down</i></h3>
-            <p class="mnone">Our features on artists you should know about</p>
+            </a>
         </div>
         <?php if( $query_ua->have_posts() ) : while( $query_ua->have_posts() ) : $query_ua->the_post(); ?>
         <div class="upcomingartist">

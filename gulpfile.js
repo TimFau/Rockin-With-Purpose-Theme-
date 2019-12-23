@@ -11,12 +11,12 @@ gulp.task('sass', function(done) {
     gulp.src('css/src/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
-    .pipe(concat('styles.css'))
-    .pipe(gulp.dest('css/dest/'))
+    .pipe(concat('style.css'))
+    .pipe(gulp.dest('../_RPWordpress1/'))
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(concat('styles.min.css'))
+    .pipe(concat('style.min.css'))
     .pipe(sourcemaps.write('/'))
-    .pipe(gulp.dest('css/dest/'));
+    .pipe(gulp.dest('../_RPWordpress1/'));
     done();
 });
 gulp.task('js', function(done) {
@@ -35,7 +35,7 @@ gulp.task('default',function() {
     });
     gulp.watch('css/src/**/*.scss', gulp.series('sass'));
     gulp.watch('js/src/*.js', gulp.series('js'));
-    gulp.watch('css/dest/*.css').on("change", reload);
+    gulp.watch('../_RPWordpress1/style.min.css').on("change", reload);
     gulp.watch('js/dest/*.js').on("change", reload);
     gulp.watch('*.php').on("change", reload);
 });

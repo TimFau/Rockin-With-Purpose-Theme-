@@ -21,6 +21,7 @@
             <div class="navlogo">
                 <a href="<?php bloginfo('url'); ?>"><img src="http://www.rockinwithpurpose.com/wp-content/uploads/2017/05/templogo2_min.png" alt="logo"></a>
             </div>
+            <div class="nav-icon"></div>
             <div class="navigation">
                 <?php
               $defaults = array(

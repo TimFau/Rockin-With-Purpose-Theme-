@@ -1,12 +1,11 @@
-/* ------------------------------------------------------------------------------------------------------------------------------
-  Header
---------------------------------------------------------------------------------------------------------------------------------- */
+// ---------------------------------------------------------------------------------------------------------------------------------
+//   Header
+// ---------------------------------------------------------------------------------------------------------------------------------
 .navbar {
     padding: 35px 0px;
     margin-bottom: 20px;
     border-bottom: 6px solid #cccccc;
     background-color: black;
-    //background: url(../../img/black_paper.png);
     box-shadow: 0 0 5px black;
     @media screen and (min-width: 900px) {
         width: 100%;
@@ -35,7 +34,7 @@ nav.navbar {
         padding-left: 0;
         background: black;
         z-index: 1;
-        box-shadow: 6px 12px 25px black;
+        box-shadow: 8px 16px 20px $black;
         li {
             display: block;
             &:hover {
@@ -85,7 +84,10 @@ nav.navbar {
             }
         }
     }
+}
+.navbar {
     .navigation {
+        display: none;
         @media screen and (min-width: 900px) {
             width: 80%;
             display: inline-block;
@@ -101,4 +103,4 @@ nav.navbar {
             
         }
     }
-} // end navbar
+}

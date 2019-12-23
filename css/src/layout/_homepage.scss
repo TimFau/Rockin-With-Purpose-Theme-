@@ -1,3 +1,17 @@
+/* ------------------------------------------------------------------------------------
+    General styles
+ --------------------------------------------------------------------------------------- */
+ .not_featured {
+    clear: both;
+}
+.home {
+    h3 i {
+        display: block;
+        @media screen and ($bp-960-min) {
+            display: none;
+        }
+    }
+}
 /* ------------------------------------------------------------------------------------------------------------------------------
   Featured Content Area
 --------------------------------------------------------------------------------------------------------------------------------- */
@@ -5,8 +19,7 @@
     margin-top: -15px;
     overflow: hidden;
     h2 {
-        font-size: $fs-large;
-        margin-top: 10px;
+        margin: 10px 0 0 0;
     }
 }
 .ft_content {
@@ -18,17 +31,27 @@
     padding: 0 0;
     margin: 0 0;
     img {
-        width: 66%;
-        @media screen and (max-width: 720px) {
-            width: 100%;
+        width: 100%;
+        @media screen and ($bp-960-min) {
+            width: 65%;
         }
     }
-    &:first-child h2 {
-        margin-bottom: 10px;
+    button {
+        display: none;
+        @media screen and ($bp-660-min) {
+            display: block;
+        }
     }
-    @media screen and (max-width: 980px) {
-        p {
-            display: none;
+    h2 {
+        margin-top: 10px;
+        @media screen and ($bp-1200-min) {
+            font-size: $fs-large;
+        }
+    }
+    p {
+        display: none;
+        @media screen and ($bp-480-min) {
+            display: block;
         }
     }
 }
@@ -39,24 +62,18 @@
     transition: 1s;
 }
 .ft_desc {
-    position: absolute;
     bottom: 0;
     right: 0;
-    padding: 0 15px;
+    padding: 15px;
     display: inline-block;
     background: #000;
-    width: 34%;
+    width: 100%;
     height: 100%;
     padding-top: 20px;
     box-sizing: border-box;
-    @media screen and (max-width: 720px) {
-        width: 100%;
-        height: auto;
-        background: #000000e6;
-        padding-bottom: 20px;
-        h2 {
-            font-size: $fs-medium;
-        }
+    @media screen and ($bp-960-min) {
+        width: 35%;
+        position: absolute;
     }
     .ft_content:hover & {
         transform: none;
@@ -70,23 +87,28 @@
 .postcategory a {
     color: white;
 }
-/* ------------------------------------------------------------------------------------
-    Remaining content general styles
- --------------------------------------------------------------------------------------- */
-.not_featured {
-    clear: both;
-}
 /* ------------------------------------------
   Recent Content
 --------------------------------------------- */
 .recent_item {
     position: relative;
     overflow: hidden;
+    text-align: left;
+    @media screen and ($bp-660-min) {
+        width: 49.675%;
+        display: inline-block;
+        &:nth-of-type(1n + 5) {
+            margin-top: .25%;
+        }
+        &:nth-of-type(2n) {
+            margin-right: .65%;
+        }
+    }
 }
 .recent_desc {
     position: absolute;
     bottom: 0;
-    padding: 8px 8px 0 8px;
+    padding: 8px;
     background: black;
     opacity: 0.8;
     width: 100%;
@@ -96,7 +118,11 @@
     margin: 8px 0 0 0;
 }
 .recent_desc p {
-    margin: 0 0 5px 0;
+    margin: 0;
+    display: none;
+    @media screen and ($bp-480-min) {
+        display: block;
+    }
 }
 .recent_desc .postcategory a {
     margin-top: 100px;
@@ -118,16 +144,30 @@
     width: 100%;
     display: inline-block;
 }
-.album {
+ div.album {
     width: 50%;
     float: left;
     overflow: hidden;
+    @media screen and ($bp-960-min) {
+        width: 24%;
+        height: 19%;
+        margin-right: 1.25%;
+        position: relative;
+        &:nth-last-of-type(1) {
+            margin-right: 0;
+        }
+    }
 }
 .albumdesc {
     position: absolute;
     top: 40%;
     left: 40%;
     display: none;
+    @media screen and ($bp-960-min) {
+        top: 30%;
+        left: 20%;
+        display: none;
+    }
 }
 /* Transformation Effects */
 .album:hover img {
