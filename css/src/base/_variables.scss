@@ -9,7 +9,11 @@ $bp-1200: "max-width: 1200px";
 $bp-1200-min: "min-width: 1200px";
 
 // Colors
+$off-white: #E2DFD0;
+$light-grey: #767676;
 $red: #993333;
+$blue: #6D909E;
+$dark-grey: #222224;
 $white: #ffffff;
 $black: #000000;
 
@@ -18,3 +22,4 @@ $fs-small: 11px;
 $fs-base: 14px;
 $fs-medium: 1.8em;
 $fs-large: 2.8em;
+$fs-aca-large: 18px; // for ACA compliance on light backgrounds

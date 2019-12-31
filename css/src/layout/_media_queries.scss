@@ -7,10 +7,6 @@
         font-weight: 600;
     }
     /* General Layout/Etc. */
-    .not_featured {
-        margin-left: 2.5%;
-        margin-right: 2.5%;
-    }
     .contentarea {
         width: 100%;
         margin: 0 auto;
@@ -114,24 +110,5 @@
     }
     .ua_desc h2 {
         text-align: center;
-    }
-}
-
- /* ------------------------------------------
-      1200px+ -TF
---------------------------------------------- */
-@media screen and (min-width:1300px) {
-    .featuredcontent, .not_featured, .navbar .container, .cat_header_post_float, #blogcontentarea {
-        width: 1200px;
-        margin: 0 auto;
-    }
-    .contentarea {
-        display: block;
-    }
-    .navlogo {
-        margin: 3px 0 0 .5%;
-    }
-    .navigation {
-        margin: 15px 0 0 0;
     }
 }

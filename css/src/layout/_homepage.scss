@@ -3,6 +3,10 @@
  --------------------------------------------------------------------------------------- */
  .not_featured {
     clear: both;
+    @media screen and ($bp-960-min) and ($bp-1200) {
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
 }
 .home {
     h3 i {

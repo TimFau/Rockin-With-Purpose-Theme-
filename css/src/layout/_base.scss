@@ -126,3 +126,12 @@ img {
     margin: 0 0;
     line-height: 22px;
 }
+@media screen and ($bp-1200-min) {
+    .featuredcontent, .not_featured, .navbar .container, .cat_header_post_float, #blogcontentarea {
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .contentarea {
+        display: block;
+    }
+}
