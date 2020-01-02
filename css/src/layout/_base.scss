@@ -26,16 +26,20 @@ Tags: RWP, Tim Fau
 //  General CSS
 // ------------------------------------------------------------------------------------------------------------------------------
 * {
-    font-family: 'montserrat', sans-serif;
+    font-family: $main-font;
     font-style: normal;
     font-weight: 400;
     font-size: $fs-base;
 }
 h1 {
     font-size: $fs-large;
+    font-family: $header-font;
+    font-weight: 700;
 }
 h2, h3 {
     font-size: $fs-medium;
+    font-family: $header-font;
+    font-weight: 700;
 }
 h3 i {display: block;}
 p {
@@ -99,7 +103,7 @@ img {
     display: inline;
     a {
     font-size: $fs-small;
-    background: $red;
+    background: $dark-grey;
     padding: 3px 7px;
     opacity: 0.8;
 }
@@ -116,19 +120,9 @@ img {
 .contentarea p {
     color: white;
 }
-.hpheading {
-    color: white;
-    text-align: center;
-    background-color: #333333;
-    border-top: 6px solid #cccccc;
-    border-bottom: 6px solid #cc0033;
-    padding: 26px 0px 6px 0px;
-    margin: 0 0;
-    line-height: 22px;
-}
 @media screen and ($bp-1200-min) {
-    .featuredcontent, .not_featured, .navbar .container, .cat_header_post_float, #blogcontentarea {
-        width: 1200px;
+    .navbar .container, .cat_header_post_float, #blogcontentarea {
+        max-width: $max-width-desktop;
         margin: 0 auto;
     }
     .contentarea {

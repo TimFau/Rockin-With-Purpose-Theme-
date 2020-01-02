@@ -2,14 +2,14 @@
   Footer
 --------------------------------------------------------------------------------------- */
 .footer {
-    background: #333333;
+    background: $dark-grey;
     color: #999999;
     text-align: center;
     padding: 33px 0;
     margin: 0px 0 0 0;
     width: 100%;
     clear: both;
-    border-top: 6px solid #cccccc;
+    border-top: 6px solid $light-grey;
 }
 .footer ul {
     list-style-type: none;

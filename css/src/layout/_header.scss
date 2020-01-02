@@ -44,7 +44,7 @@
 .navbar .navigation {
     display: none;
     @media screen and ($bp-960-min) {
-        display: block;
+        display: block !important; // important counteracts bug with mobile nav JS
         position: absolute;
         right: 0;
         bottom: 0;
@@ -82,7 +82,9 @@
     }
 }
 .nav > li {
-    padding-right: 25px;
+    @media screen and ($bp-960-min) {
+        padding-right: 25px;
+    }
 }
 .navbar li {
     position: relative;
@@ -154,6 +156,14 @@
     display: none;
     background: #cccccc;
     z-index: 1;
+    li {
+        display: block;
+        a{
+            color: $white;
+            white-space: nowrap;
+            padding-left: 50px;
+        }
+    }
     @media screen and ($bp-960-min) {
         position: absolute;
         left: 0;
@@ -163,16 +173,9 @@
         li {
             height: auto;
             a {
-                padding: 15px;
+                padding: 15px 15px 15px 25px;
                 padding-right: 0;
             }
-        }
-    }
-    li {
-        display: block;
-        a{
-            color: $white;
-            white-space: nowrap;
         }
     }
 }

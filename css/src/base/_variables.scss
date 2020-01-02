@@ -9,8 +9,9 @@ $bp-1200: "max-width: 1200px";
 $bp-1200-min: "min-width: 1200px";
 
 // Colors
-$off-white: #E2DFD0;
+$off-white: #E2DCD0;
 $light-grey: #767676;
+$light-grey-transparent: #767676cc;
 $red: #993333;
 $blue: #6D909E;
 $dark-grey: #222224;
@@ -23,3 +24,6 @@ $fs-base: 14px;
 $fs-medium: 1.8em;
 $fs-large: 2.8em;
 $fs-aca-large: 18px; // for ACA compliance on light backgrounds
+
+// Layout
+$max-width-desktop: 1200px;
