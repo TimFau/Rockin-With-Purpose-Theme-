@@ -13,6 +13,8 @@ $off-white: #E2DCD0;
 $light-grey: #767676;
 $light-grey-transparent: #767676cc;
 $red: #993333;
+$red-txt-light: #CE6C6C; // ADA compliant variation when used as text on dark backgrounds
+$red-bg-light: #C55050; // ADA compliant variation when used as bg with white text
 $blue: #6D909E;
 $dark-grey: #222224;
 $dark-grey-transparent: #222224ba;
@@ -24,7 +26,7 @@ $fs-small: 11px;
 $fs-base: 14px;
 $fs-medium: 1.8em;
 $fs-large: 2.8em;
-$fs-aca-large: 18px; // for ACA compliance on light backgrounds
+$fs-aca-large: 18px; // for ADA compliance on light backgrounds
 
 // Layout
 $max-width-desktop: 1200px;

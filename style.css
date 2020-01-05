@@ -54,10 +54,9 @@ button, .btn {
   color: #ffffff;
   border: none;
   padding: 5px 10px;
-  opacity: .8;
   cursor: pointer; }
   button:hover, .btn:hover {
-    opacity: 1; }
+    background: #C55050; }
 
 a {
   text-decoration: none;
@@ -253,7 +252,7 @@ img {
 
 @media screen and (min-width: 960px) {
   .navbar li:hover a {
-    color: #993333; }
+    color: #CE6C6C; }
   .navbar li:hover .sub-menu {
     display: block;
     height: auto;
@@ -587,12 +586,16 @@ div.album {
   width: 100%;
   height: 100%; }
 
+#blogcontentarea .postcategory a {
+  background: #993333; }
+  #blogcontentarea .postcategory a:hover {
+    background: #C55050; }
+
 @media screen and (min-width: 960px) {
   #blogcontentarea {
     padding: 0 2.5%; }
     #blogcontentarea h1 {
-      padding-right: 20px;
-      text-shadow: 3px 3px 3px #000000; }
+      padding-right: 20px; }
     #blogcontentarea .header_post_float {
       width: 66%;
       float: left;
@@ -612,13 +615,13 @@ div.album {
   position: absolute;
   bottom: 0px;
   left: 0px;
-  padding-left: 10px;
+  padding: 10px;
   text-decoration: none;
-  text-shadow: 2px 2px black; }
+  background: #222224ba;
+  width: 100%; }
   .blogtitle .blogmetainfo {
     color: #ffffff;
-    font-weight: 700;
-    text-shadow: 2px 2px 2px #000000; }
+    font-weight: 700; }
 
 .blogimg img {
   width: 100%;
@@ -660,33 +663,29 @@ div.album {
       .latestposts h3 {
         text-align: right; } }
   .latestposts h4 {
-    font-weight: 700;
-    text-shadow: 2px 1px black; }
+    font-weight: 700; }
   .latestposts p {
     margin: 0 0;
-    color: #ffffff;
-    text-shadow: 2px 1px #000000; }
+    color: #ffffff; }
 
 .lpitem {
   position: relative;
   overflow: hidden; }
-  .lpitem:hover {
+  .lpitem img {
+    opacity: .7; }
+  .lpitem:hover img {
     opacity: 1;
+    transform: scale(1.1);
     transition: 1s; }
-    .lpitem:hover img {
-      transform: scale(1.1);
-      transition: 1s; }
-  @media screen and (min-width: 960px) {
-    .lpitem {
-      opacity: .7; } }
 
 .lpmeta {
   position: absolute;
   bottom: 0px;
   left: 0px;
-  padding: 0px 10px 15px 10px; }
-  .lpmeta h2 {
-    text-shadow: 5px 5px 5px #000000; }
+  padding: 10px;
+  width: 100%;
+  background: #222224ba;
+  box-sizing: border-box; }
 
 @media screen and (min-width: 960px) {
   /* Sidebar */

@@ -141,7 +141,7 @@
     }
     @media screen and ($bp-960-min) {
         &:hover a {
-            color: $red;
+            color: $red-txt-light;
         }
         &:hover .sub-menu {
             display: block;

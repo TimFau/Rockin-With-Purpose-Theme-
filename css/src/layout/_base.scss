@@ -44,10 +44,9 @@ button, .btn {
     color: $white;
     border: none;
     padding: 5px 10px;
-    opacity: .8;
     cursor: pointer;
     &:hover {
-        opacity: 1;
+        background: $red-bg-light;
     }
 }
 a {
