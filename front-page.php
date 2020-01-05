@@ -52,7 +52,7 @@
     $query_rn = new WP_Query( $args );
 ?>
 <div class="not_featured">
-<section class="recentnews l_container design-1">
+<section class="recentnews design-1 clearfix">
     <div class="headingbox">
         <h3 class="hpheading hpheading_hp">Recent Content<i class="material-icons dhide">keyboard_arrow_down</i></h3>
     </div>
@@ -88,7 +88,7 @@
 ?>
     
 <!-- New Releases -->
-<section class="newreleases l_container">
+<section class="newreleases clearfix">
     <div class="container">
         <div class="headingbox">
             <a href="category/albums/">
@@ -124,7 +124,7 @@
     $query_ua = new WP_Query( $args );
 ?>
 <!-- Upcomming artists -->
-<section class="upcoming l_container design-1">
+<section class="upcoming design-1 clearfix">
     <div class="container">
         <div class="headingbox">
             <a href="category/artist-spotlight/">

@@ -17,17 +17,6 @@
         <div class="addthis_inline_share_toolbox"></div>
         <p><?php the_content(); ?></p>
         <div class="addthis_inline_share_toolbox"></div>
-        <!-- <div class="abouttheauthor">
-                        <img src="../wp-content/themes/_RPWordpress1/img/linda.jpg">
-                        <div class="abtinfo">
-                        <h4>Linda Fau</h4>
-                        <p><i>Owner/Blogger</i></p>
-                        </div>
-                        <div class="abtabout">
-                        <p>With a passion for purpose-driven music that is impacting people with a message of hope, love and faith, I take pride in presenting to you the music, artists and resources to keep you rocking on.</p>              
-                        <div class="addthis_inline_follow_toolbox"></div>
-                        </div>
-        </div> -->
     </div>
     <?php endwhile; else : ?>
         <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
@@ -57,30 +46,4 @@
         </div>
     </div>
 </div>
-<!-- 
-Related Content (AKA "You May Also Like")
-Disabled until the sites has more content to displa
-
-    <?php
-        // $args = array(
-        //     'post_type' => 'post',
-        //     'posts_per_page'   => 6,
-        // );
-        // $query_mayalso = new WP_Query( $args );
-    ?> 
-<div class="relatedcontent">
-    <div class="headingbox"><h3 class="hpheading">You May Also Like<br class="dhide"><i class="material-icons dhide">keyboard_arrow_down</i></h3></div>
-    <?php // if( $query_mayalso->have_posts() ) : while( $query_mayalso->have_posts() ) : $query_mayalso->the_post(); ?>
-    <div class="recent_item">
-        <div class="ri_img">
-            <a href="<?php // the_permalink(); ?>"><?php // the_post_thumbnail('large'); ?></a>
-        </div>
-        <div class="recent_desc">
-            <a href="<?php // the_permalink(); ?>"><h2><?php // the_title(); ?></h2></a>
-            <p><?php // the_excerpt(); ?></p>
-        </div>
-    </div>
-    <?php // endwhile; endif; wp_reset_postdata(); ?>
-</div>
--->
 <?php get_footer(); ?>

@@ -7,22 +7,15 @@
     background-color: $dark-grey;
     box-shadow: 0 0 5px $black;
     position: relative;
-    @media screen and (min-width: 900px) {
-        width: 100%;
-        display: inline-block;
-        padding: 5px 0 8px 0;
-        padding:0;
-        margin-bottom: 16px;
-    }
-}
-.navbar .container {
     @media screen and ($bp-960-min) {
-        position: relative;
+        padding:0;
+        .container {
+            position: relative;
+        }
     }
 }
 .navlogo {
     width: 100%;
-    margin: 0 auto;
     padding: 25px 0;
     position: relative;
     a {
@@ -99,38 +92,6 @@
         }
     }
 }
-.navbar li {
-    &:hover > a, &.open > a {
-        background: $dark-grey;
-    }
-    @media screen and ($bp-960-min) {
-        &:hover a {
-            color: #d01d33;
-        }
-        &:hover .sub-menu {
-            display: block;
-            height: auto;
-            padding-top: 7px;
-        }
-        &:hover.menu-item-has-children > a:after {
-            content: 'keyboard_arrow_down';
-        }
-    }
-    &.menu-item-has-children > a:after {
-        @extend .material-icons;
-        content: 'keyboard_arrow_right';
-        display: inline-block;
-        position: absolute;
-        padding-left: 5px;
-        top: 15px;
-        @media screen and ($bp-960-min) {
-            top: 44px;
-        }
-    }
-    &.menu-item-has-children.open > a:after {
-        content: 'keyboard_arrow_down';
-    }
-}
 .navbar li a {
     transition: 0.3s;
     padding: 16px 0;
@@ -148,7 +109,51 @@
         margin-right: 30px;
         padding: 48px 0 48px 2px;
         &:hover {
-            color: #d41733;
+            color: $red;
+        }
+    }
+}
+// hover & sub-menu styling
+.navbar li {
+    &:hover > a, &.open > a {
+        background: $dark-grey;
+    }
+    &.open ul.sub-menu {
+        display: block;
+        @media screen and ($bp-960-min) {
+            display: block;
+            top: 50px;
+        }
+    }
+    &.menu-item-has-children > a:after {
+        @extend .material-icons;
+        content: 'keyboard_arrow_right';
+        display: inline-block;
+        position: absolute;
+        padding-left: 5px;
+        top: 15px;
+        @media screen and ($bp-960-min) {
+            top: 44px;
+        }
+    }
+    &.menu-item-has-children.open > a:after {
+        content: 'keyboard_arrow_down';
+    }
+    @media screen and ($bp-960-min) {
+        &:hover a {
+            color: $red;
+        }
+        &:hover .sub-menu {
+            display: block;
+            height: auto;
+            padding-top: 7px;
+        }
+        &:hover.menu-item-has-children > a:after {
+            content: 'keyboard_arrow_down';
+        }
+        &:last-of-type ul.sub-menu {
+            right: 25px;
+            left: auto;
         }
     }
 }
@@ -176,21 +181,6 @@
                 padding: 15px 15px 15px 25px;
                 padding-right: 0;
             }
-        }
-    }
-}
-.navbar li {
-    &.open ul.sub-menu {
-        display: block;
-        @media screen and ($bp-960-min) {
-            display: block;
-            top: 50px;
-        }
-    }
-    @media screen and ($bp-960-min) {
-        &:last-of-type ul.sub-menu {
-            right: 25px;
-            left: auto;
         }
     }
 }

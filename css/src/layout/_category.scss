@@ -1,59 +1,47 @@
-#category a {
-    color: black;
+// ---------------------------------------------------------------------------------------------------------------------------------
+//   Category Page Styling
+// ---------------------------------------------------------------------------------------------------------------------------------
+.cat_hpheading {
+    margin-top: -24px;
 }
 .cat_content {
     margin-bottom: 15px;
 	padding-bottom: 15px;
     border-bottom: 2px solid #cccccc;
 }
-#category .postcategory a  {
-        color: white;
-    } 
 .cat_img {
     margin-bottom: 10px;
     overflow: hidden;
-    }
-/* Cat Tittle */
-.cat_hpheading {
-    margin-top: -24px;
-}
-.cat_title {
-    margin: 10px 0 10px 0;
-}
-.cat_meta p {
-    margin: 0px 0 10px 0;
-    color: #666666;
-}
-#category .cat_excerpt a {
-    color: $red;
-    text-decoration: underline;
-}
-.cat_excerpt p {
-    margin: 0 0 25px 0;
 }
 .cat_desc {
     margin-right: 2.5%;
     margin-left: 2.5%;
+    .cat_title {
+        margin: 10px 0 10px 0;
+    }
+    p {
+        margin: 0px 0 10px 0;
+        color: $dark-grey;
+    }
+    .cat_excerpt a {
+        color: $red;
+        text-decoration: underline;
+    }
+    .cat_excerpt p {
+        margin: 0 0 25px 0;
+    }
 }
 
-@media screen and (min-width:900px) {
+@media screen and ($bp-960-min) {
     /* Container */
     .cat_header_post_float {
         margin-left: 2.5%;
         margin-right: 2.5%;
         overflow: hidden;
     }
-    /* Nav */
-        
     /* Heading */
     .cat_hpheading {
         margin-top: 0;
-    }
-    
-    /* Category Content Boxes/Styling */
-    .category h2 {
-        color: #333;
-        text-shadow: none;
     }
     .cat_desc {
         margin: 0 0;
@@ -65,21 +53,12 @@
         margin-top: -32px;
     }
     .cat_content {
-        display: inline-block;
         width: 47.5%;
         float: left;
         margin-top: 25px;
-    }
-    .cat_content:nth-child(odd) {
-        margin-right: 5%;
-    }
-    #category .cat_meta p {
-        color: #666;
-    }
-    /* Hover Effects */
-    .cat_img:hover img, .cat_title:hover ~ .cat_img img {
-        transform: scale(1.1);
-        transition: 1s;
+        &:nth-child(odd) {
+            margin-right: 5%;
+        }
     }
 }
 @media screen and (min-width:1300px) {

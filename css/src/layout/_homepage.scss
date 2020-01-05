@@ -3,12 +3,13 @@
  --------------------------------------------------------------------------------------- */
 .home h3 i {
     display: block;
+    color: $white;
     @media screen and ($bp-960-min) {
         display: none;
     }
 }
 .hpheading {
-    color: white;
+    color: $white;
     text-align: center;
     background-color: $dark-grey;
     border-top: 6px solid $light-grey;
@@ -27,12 +28,10 @@
         text-transform: uppercase;
         &:after {
             content: "";
-            display: block;
             height: 4px;
             position: absolute;
             width: 1920px;
-            margin-top: -1px;
-            top: 50%;
+            top: 48%;
             left: 100%;
             background-color: $dark-grey;
         }
@@ -43,7 +42,6 @@
 --------------------------------------------------------------------------------------------------------------------------------- */
 .featuredcontent {
     margin-top: -20px;
-    overflow: hidden;
     max-width: $max-width-desktop;
     @media screen and ($bp-960-min) {
         margin: 25px auto 0 auto;
@@ -59,73 +57,38 @@
 }
 .ft_content {
     position: relative;
-    display: block;
-    overflow: hidden;
-    float: left;
-    width: 100%;
-    padding: 0 0;
-    margin: 0 0;
-    box-sizing: border-box;
-    img {
-        width: 100%;
-        @media screen and ($bp-960-min) {
+    @media screen and ($bp-960-min) {
+        img {
             width: 65%;
         }
     }
-    h2 {
-        margin-top: 10px;
-        @media screen and ($bp-1200-min) {
+    @media screen and ($bp-1200-min) {
+        h2 {
             font-size: $fs-large;
         }
     }
 }
-.content:hover .desc {
-    transform: rotate(-2deg);
-    background: black;
-    opacity: 0.8;
-    transition: 1s;
-}
 .ft_desc {
-    bottom: 0;
-    right: 0;
     padding: 12px;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
     box-sizing: border-box;
     border-top: 4px solid $dark-grey;
     @media screen and ($bp-960-min) {
+        display: inline-block;
         width: 35%;
+        height: 100%;
         position: absolute;
+        bottom: 0;
+        right: 0;
         border-bottom: 4px solid $dark-grey;
     }
     @media screen and (min-width: 1030px) {
         padding: 25px;
     }
-    h2 {
-        color: $dark-grey;
-        text-shadow: none;
-    }
-    p {
-        color: $dark-grey;
-    }
-    .ft_content:hover & {
-        transform: none;
-        opacity: 1;
-    }
-}
-.content:hover img {
-    transform: scale(1.1);
-    transition: 1s;
-}
-.postcategory a {
-    color: white;
 }
 /* ------------------------------------------
-  Not Featured Content
+  Remaining Content
 --------------------------------------------- */
 .not_featured section {
-    display: block;
     @media screen and ($bp-960-min) {
         margin: 50px auto;
         padding-left: 2.5%;
@@ -137,23 +100,16 @@
         padding-right: 0%;
     }
 }
+
+// Reusable Design Variation 1
 .design-1 {
     position: relative;
-    display: inline-block;
-    overflow: hidden;
-    width: 100%;
     max-width: $max-width-desktop;
     @media screen and ($bp-960-min) {
         margin-top: 25px;
     }
 }
 .design-1 .item {
-    position: relative;
-    overflow: hidden;
-    text-align: left;
-    .postcategory, a {
-        cursor: pointer;
-    }
     @media screen and ($bp-960-min) {
         $right-margin: 2%;
         width: (100 - ($right-margin * 2)) / 3;
@@ -162,23 +118,16 @@
         img {
             opacity: .8;
         }
-        &:nth-of-type(1n + 5) {
-            margin-top: .25%;
-        }
         &:last-of-type {
             margin-right: 0;
         }
-        &:hover {
-            img {
-                opacity: 1;
-            }
+        &:hover img {
+            opacity: 1;
         }
     }
 }
 .design-1 .desc {
     padding: 15px 15px 20px 15px;
-    width: 100%;
-    box-sizing: border-box;
     position: relative;
     top: -70px;
     margin-bottom: -70px;
@@ -190,39 +139,23 @@
     }
     h2 {
         margin: 8px 0 0 0;
-        color: $dark-grey;
     }
     p {
         margin: 0;
         padding: 8px 0;
-        color: $dark-grey;
-    }
-    .postcategory a {
-        margin-top: 100px;
     }
 }
-/* ------------------------------------------
-  Recent Content
---------------------------------------------- */
 
 /* ------------------------------------------
   New Releases
 --------------------------------------------- */
 .newreleases {
-    width: 100%;
-    display: inline-block;
     background: $dark-grey;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
     margin-top: 25px;
     @media screen and ($bp-960-min) {
         padding: 45px 0 60px 0;
-        .not_featured & {
-            width: 100%;
-        }
         .container {
-            max-width: 1200px;
+            max-width: $max-width-desktop;
             margin: 0 auto;
         }
     }
@@ -252,15 +185,18 @@
     }
     @media screen and ($bp-960-min) {
         width: 24%;
-        height: 19%;
         float: left;
-        overflow: hidden;
         margin-right: 1.25%;
         .albumimg {
             width: 100%;
+            overflow: hidden;
         }
         &:nth-last-of-type(1) {
             margin-right: 0;
+        }
+        &:hover img {
+            transform: scale(1.1);
+            transition: 1s;
         }
     }
 }
@@ -268,24 +204,24 @@
     position: absolute;
     top: 0;
     height: 100%;
-    width: 100%;
     padding: 25px;
     box-sizing: border-box;
     background: $light-grey-transparent;
     width: 50%;
-    display: inline-block;
+    h2, p {
+        color: $white;
+    }
     a {
         display: block;
         height: 100%;
         position: relative;
     }
     p {
-        display: none;
-        @media screen and (min-width: 575px) and ($bp-960) {
-            display: block;
+        @media screen and (max-width: 575px) {
+            display: none;
         }
-        @media screen and ($bp-1200-min) {
-            display: block;
+        @media screen and ($bp-960-min) and ($bp-1200) {
+            display: none;
         }
     }
     h2 {
@@ -299,7 +235,6 @@
     }
     @media screen and ($bp-960-min) {
         opacity: 0;
-        display: block;
         width: 100%;
         .read-more {
             bottom: 0;
@@ -307,10 +242,6 @@
         .album:hover & {
             opacity: 1;
             transition: .5s;
-            img {
-                transform: scale(1.1);
-                transition: 1s;
-            }
         }
     }
 }

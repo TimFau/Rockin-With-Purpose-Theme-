@@ -1,37 +1,44 @@
-/*--------------------------------------------------
-  General CSS
---------------------------------------------------*/
-a {
-    color: inherit;
-}
+// ---------------------------------------------------------------------------------------------------------------------------------
+//   Posts Page Styling
+// ---------------------------------------------------------------------------------------------------------------------------------
+
 #blogcontentarea {
     h1 {
-        font-weight: bold;
         color: white;
     }
-}
-.header_post_float h3 {
-    margin: 25px 0 -10px 0px;
-}
-.postcategory a:hover {
-    opacity: 1.0;
-    text-decoration: none;
-}
-#blogcontentarea img {
-    width: 100%;
-    height: 100%;
-}
-
-
-/*--------------------------------------------------
-    Header 
---------------------------------------------------*/
-#bootstrap-overrides .blogtitle, #bootstrap-overrides .blogtitle a {
-    color: white;
+    .hpheading h3 {
+        position: relative;
+        display: inline-block;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    @media screen and ($bp-960-min) {
+        padding: 0 2.5%;
+        h1 {
+            padding-right: 20px;
+            text-shadow: 3px 3px 3px $black;
+        }
+        .header_post_float {
+            width: 66%;
+            float: left;
+            overflow: hidden;
+            p {
+                line-height: 2.2em;
+            }
+        }
+    }
 }
 .blogheader {
     margin-top: -20px;
     position: relative;
+    @media screen and ($bp-960-min) {
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
 }
 .blogtitle {
     position: absolute;
@@ -40,6 +47,11 @@ a {
     padding-left: 10px;
     text-decoration: none;
     text-shadow: 2px 2px black;
+    .blogmetainfo {
+        color: $white;
+        font-weight: 700;
+        text-shadow: 2px 2px 2px $black;
+    }
 }
 .blogimg img {
     width: 100%;
@@ -56,46 +68,19 @@ a {
 .post {
     margin-top: 25px;
     padding: 0px 15px;
-}
-.post p {
-    line-height: 1.8em;
-}
-.post h2 {
-    color: black;
-}
-
-
-/*-------------------------------------------------- 
-    About The Author 
---------------------------------------------------*/
-.abouttheauthor {
-    border: 5px solid #cccccc;
-    margin: 25px 0px;
-    padding: 10px 15px;
-    background-color: rgba(255, 255, 255, 0.5);
-}
-.abouttheauthor img {
-    width: 60px !important;
-    border-radius: 50%;
-    float: right;
-}
-.abtinfo {
-    float: left;
-    margin-top: 25px;
-    line-height: 1px;
-}
-.abtinfo h4 {
-    font-weight: 600;
-}
-.abtabout {
-    clear: both;
-}
-    /*-- W/ plugin --*/
-.abh_box_business {
-    border: 5px solid #cccccc;
-    margin: 25px 0px;
-    padding: 10px 15px;
-    background-color: rgba(255, 255, 255, 0.5);
+    a {
+        color: $red;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @media screen and ($bp-960-min) {
+        width: 100%;
+        padding: 0px 0px 0px 0px;
+        p {
+            padding-right: 50px;
+        }
+    }
 }
 
 
@@ -103,118 +88,60 @@ a {
     Latest Posts 
 --------------------------------------------------*/
  .latestposts {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
     display: inline-block;
-}
-.latestposts img {
+    overflow: hidden;
     width: 100%;
-    height: 100%;
-}
-.latestposts h2 {
-    margin: 10px 0;
-}
-.latestposts p {
-    margin: 0 0;
+    h2 {
+        margin: 10px 0;
+        color: $white;
+    }
+    h3 {
+        margin-bottom: 20px;
+        @media screen and ($bp-960-min) {
+            text-align: right;
+        }
+    }
+    h4 {
+        font-weight: 700;
+        text-shadow: 2px 1px black;
+    }
+    p {
+        margin: 0 0;
+        color: $white;
+        text-shadow: 2px 1px $black;
+    }
 }
 .lpitem {
     position: relative;
     overflow: hidden;
-}
-.lpitem:hover {
-    opacity: 1;
-    transition: 1s;
-}
-.lpitem:hover img {
-    transform: scale(1.1);
-    transition: 1s;
+    &:hover {
+        opacity: 1;
+        transition: 1s;
+        img {
+            transform: scale(1.1);
+            transition: 1s;
+        }
+    }
+    @media screen and ($bp-960-min) {
+        opacity: .7;
+    }
 }
 .lpmeta {
     position: absolute;
     bottom: 0px;
     left: 0px;
     padding: 0px 10px 15px 10px;
-}
-.lpmeta, .lpmeta a {
-    color: white;
-}
-.latestposts h4 {
-    font-weight: 600;
-    text-shadow: 2px 1px black;
-}
-.latestposts p {
-    text-shadow: 2px 1px black;
-}
-#blogcontentarea .hpheading h3 {
-    position: relative;
-    display: inline-block;
-    font-weight: 600px;
-}
-
-
-
-/*--------------------------------------------------
-    Also Like 
---------------------------------------------------*/
-.relatedcontent {
-    clear: both;
-}
-.relatedcontent img {
-    width: 100%;
-    height: 100%;
-}
-.relatedcontent p {
-    color: white;
-}
-
-/*----------------------------------------------------------------------------------------------------
-
-    MEDIA QUERIES
-
-----------------------------------------------------------------------------------------------------*/
-
-@media screen and (min-width:900px) {
-    /* Blog Area */
-    div#blogcontentarea {
-        padding: 0 2.5%;
+    h2 {
+        text-shadow: 5px 5px 5px $black;
     }
-    #blogcontentarea .header_post_float p {
-        line-height: 2.2em;
-    }
-    #blogcontentarea .header_post_float {
-        width: 66%;
-        display: inline-block;
-        float: left;
-        overflow: hidden;
-    }
-    .blogheader img {
-        width: 100%;
-        height: 100%;
-    }
-    .blogheader {
-        margin-top: 30px;
-    }
-    .post {
-        width: 100%;
-        padding: 0px 0px 0px 0px;
-    }
-    #blogcontentarea h1 {
-        padding-right: 20px;
 }
-    
+
+@media screen and ($bp-960-min) {
     /* Sidebar */
     .lp_block {
         width: 30%;
         margin-left: 4%;
         float: right;
-        display: inline-block;
-    }
-    .latestposts h3 {
-        text-align: right;
-    }
-    .lpitem {
-    opacity: .5;
     }
     
     /* Category Page */
