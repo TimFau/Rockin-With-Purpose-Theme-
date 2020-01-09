@@ -1,69 +1,31 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 //   Category Page Styling
 // ---------------------------------------------------------------------------------------------------------------------------------
-.cat_hpheading {
-    margin-top: -24px;
-}
-.cat_content {
-    margin-bottom: 15px;
-	padding-bottom: 15px;
-    border-bottom: 2px solid #cccccc;
-}
-.cat_img {
-    margin-bottom: 10px;
-    overflow: hidden;
-}
-.cat_desc {
-    margin-right: 2.5%;
-    margin-left: 2.5%;
-    .cat_title {
-        margin: 10px 0 10px 0;
-    }
-    p {
-        margin: 0px 0 10px 0;
-        color: $dark-grey;
-    }
-    .cat_excerpt a {
-        color: $red;
-        text-decoration: underline;
-    }
-    .cat_excerpt p {
-        margin: 0 0 25px 0;
-    }
-}
-
-@media screen and ($bp-960-min) {
-    /* Container */
-    .cat_header_post_float {
-        margin-left: 2.5%;
-        margin-right: 2.5%;
-        overflow: hidden;
-    }
-    /* Heading */
-    .cat_hpheading {
-        margin-top: 0;
-    }
-    .cat_desc {
-        margin: 0 0;
-    }
-    .cat_meta p {
-        margin-top: 10px;
-    }
-    .cat_latestposts {
-        margin-top: -32px;
-    }
-    .cat_content {
-        width: 47.5%;
-        float: left;
-        margin-top: 25px;
-        &:nth-child(odd) {
-            margin-right: 5%;
+#category {
+    h1 {
+        text-align: center;
+        border-bottom: 4px solid $dark-grey;
+        margin: 0;
+        padding: 25px 0;
+        @media screen and ($bp-960-min) {
+            text-align: left;
+            max-width: $max-width-desktop;
+            margin: 0 auto;
         }
     }
-}
-@media screen and (min-width:1300px) {
-    /* Container */
-    .cat_header_post_float {
-        margin: 0 auto;
+    .design-1 {
+        @media screen and ($bp-960-min) {
+            margin: 50px auto;
+            box-sizing: border-box;
+            .item {
+                margin-bottom: 25px;
+                &:last-of-type {
+                    margin-right: 2%;
+                }
+                &:nth-of-type(3n) {
+                    margin-right: 0;
+                }
+            }
+        }
     }
 }

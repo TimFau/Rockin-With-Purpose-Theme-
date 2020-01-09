@@ -2,153 +2,64 @@
 //   Posts Page Styling
 // ---------------------------------------------------------------------------------------------------------------------------------
 
-#blogcontentarea {
-    h1 {
-        color: white;
+#blogContentArea {
+    .heading-container {
+        padding: 5% 5% 3.5% 5%;
+        text-align: center;
     }
-    .hpheading h3 {
-        position: relative;
-        display: inline-block;
-    }
-    img {
-        width: 100%;
-        height: 100%;
-    }
-    .postcategory a {
-        background: $red;
-        &:hover {
-            background: $red-bg-light;
+    .post-container {
+        margin: 0 20%;
+        p {
+            font-size: 21px;
+            line-height: 35px;
         }
+    }
+    .blogimg {
+        position: relative;
     }
     @media screen and ($bp-960-min) {
-        padding: 0 2.5%;
-        h1 {
-            padding-right: 20px;
-        }
-        .header_post_float {
-            width: 66%;
+        .addthis_inline_share_toolbox {
+            position: absolute;
+            position: sticky;
             float: left;
-            overflow: hidden;
-            p {
-                line-height: 2.2em;
+            margin-left: -75px;
+            margin-top: 100px;
+            top: 100px;
+            a {
+                display: block;
             }
         }
+        
     }
 }
-.blogheader {
-    margin-top: -20px;
-    position: relative;
-    @media screen and ($bp-960-min) {
-        img {
-            width: 100%;
-            height: 100%;
-        }
-    }
-}
-.blogtitle {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    padding: 10px;
-    text-decoration: none;
-    background: $dark-grey-transparent;
-    width: 100%;
-    .blogmetainfo {
-        color: $white;
-        font-weight: 700;
-    }
-}
-.blogimg img {
-    width: 100%;
-    height: 100%;
-}
-.blogtitleh1 h1 {
-    margin: 10px 0;
-}
-
 
 /*--------------------------------------------------
-    Content
+    Post Content
 --------------------------------------------------*/
 .post {
     margin-top: 25px;
     padding: 0px 15px;
+    position: relative;
+    a, i, span, strong {
+        font-size: inherit;
+    }
     a {
         color: $red;
+        text-decoration: underline;
         &:hover {
             text-decoration: underline;
         }
     }
+    figure {
+        margin-left: 0;
+        text-align: center;
+    }
     @media screen and ($bp-960-min) {
         width: 100%;
-        padding: 0px 0px 0px 0px;
+        padding: 0 2% 0 3%;
+        box-sizing: border-box;
         p {
             padding-right: 50px;
         }
-    }
-}
-
-
-/*--------------------------------------------------
-    Latest Posts 
---------------------------------------------------*/
- .latestposts {
-    display: inline-block;
-    overflow: hidden;
-    width: 100%;
-    h2 {
-        margin: 10px 0;
-        color: $white;
-    }
-    h3 {
-        margin-bottom: 20px;
-        @media screen and ($bp-960-min) {
-            text-align: right;
-        }
-    }
-    h4 {
-        font-weight: 700;
-    }
-    p {
-        margin: 0 0;
-        color: $white;
-    }
-}
-.lpitem {
-    position: relative;
-    overflow: hidden;
-    img {
-        opacity: .7;
-    }
-    &:hover {
-        
-        img {
-            opacity: 1;
-            transform: scale(1.1);
-            transition: 1s;
-        }
-    }
-}
-.lpmeta {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    padding: 10px;
-    width: 100%;
-    background: $dark-grey-transparent;
-    box-sizing: border-box;
-}
-
-@media screen and ($bp-960-min) {
-    /* Sidebar */
-    .lp_block {
-        width: 30%;
-        margin-left: 4%;
-        float: right;
-    }
-    
-    /* Category Page */
-    .cat_latestposts {
-        padding-top: 35px;
     }
 }

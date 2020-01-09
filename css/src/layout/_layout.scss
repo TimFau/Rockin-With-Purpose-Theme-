@@ -1,0 +1,47 @@
+// ------------------------------------------------------------------------------------------------------------------------------
+//  Shared Layout Styles
+// ------------------------------------------------------------------------------------------------------------------------------
+// Reusable Design Variation 1
+.design-1 {
+    position: relative;
+    max-width: $max-width-desktop;
+    @media screen and ($bp-960-min) {
+        margin-top: 25px;
+    }
+}
+.design-1 .item {
+    @media screen and ($bp-960-min) {
+        $right-margin: 2%;
+        width: (100 - ($right-margin * 2)) / 3;
+        float: left;
+        margin-right: #{$right-margin};
+        img {
+            opacity: .8;
+        }
+        &:last-of-type {
+            margin-right: 0;
+        }
+        &:hover img {
+            opacity: 1;
+        }
+    }
+}
+.design-1 .desc {
+    padding: 15px 15px 20px 15px;
+    position: relative;
+    top: -70px;
+    margin-bottom: -70px;
+    background: $white;
+    @media screen and ($bp-960-min) {
+        padding: 15px 5px 15px 0;
+        top: 0;
+        margin-bottom: 0;
+    }
+    h2 {
+        margin: 8px 0 0 0;
+    }
+    p {
+        margin: 0;
+        padding: 8px 0;
+    }
+}

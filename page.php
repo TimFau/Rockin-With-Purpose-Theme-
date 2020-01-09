@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-<div id="blogcontentarea">
-<div class="header_post_float">
+<div id="blogContentArea">
+<div class="post-container">
     <h2 class="hpheading cat_hpheading"><?php wp_title($sep = '') ?><br class="dhide"><i class="material-icons dhide">keyboard_arrow_down</i></h2>
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <div class="post page">

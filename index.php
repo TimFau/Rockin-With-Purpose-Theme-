@@ -1,15 +1,15 @@
 <?php get_header(); ?>
-<div id="blogcontentarea">
-<div class="header_post_float">
+<div id="blogContentArea">
+<div class="post-container">
     
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <div class="blogheader">
         <div class="blogimg"><?php
             if ( in_category( '7' ) ){ the_post_thumbnail('large'); }           else { the_post_thumbnail('thumbnail'); } 
             ?></div>
-        <div class="blogtitle">
+        <div class="meta">
             <div class="postcategory"><?php the_category(' '); ?></div>
-            <div class="blogtitleh1"><h1><?php the_title(); ?></h1></div>
+            <div ><h1><?php the_title(); ?></h1></div>
             <div class="blogmetainfo"><?php the_author(); ?> | <?php the_date(); ?></p></div>
         </div>
     </div>

@@ -41,7 +41,6 @@
   Featured Content Area
 --------------------------------------------------------------------------------------------------------------------------------- */
 .featuredcontent {
-    margin-top: -20px;
     max-width: $max-width-desktop;
     @media screen and ($bp-960-min) {
         margin: 25px auto 0 auto;
@@ -53,6 +52,16 @@
     }
     h2 {
         margin: 10px 0 0 0;
+        color: $white;
+    }
+    p {
+        color: $white;
+    }
+    .postcategory a {
+        background: $red;
+        &:hover {
+            background: $red-bg-light;
+        }
     }
 }
 .ft_content {
@@ -62,8 +71,12 @@
             width: 65%;
         }
     }
-    @media screen and ($bp-1200-min) {
-        h2 {
+    
+    h2 {
+        @media screen and ($bp-960) {
+            font-size: $fs-large;
+        }
+        @media screen and ($bp-1200-min) {
             font-size: $fs-large;
         }
     }
@@ -72,6 +85,7 @@
     padding: 12px;
     box-sizing: border-box;
     border-top: 4px solid $dark-grey;
+    background: $dark-grey;
     @media screen and ($bp-960-min) {
         display: inline-block;
         width: 35%;
@@ -98,51 +112,6 @@
     @media screen and ($bp-1200-min) {
         padding-left: 0%;
         padding-right: 0%;
-    }
-}
-
-// Reusable Design Variation 1
-.design-1 {
-    position: relative;
-    max-width: $max-width-desktop;
-    @media screen and ($bp-960-min) {
-        margin-top: 25px;
-    }
-}
-.design-1 .item {
-    @media screen and ($bp-960-min) {
-        $right-margin: 2%;
-        width: (100 - ($right-margin * 2)) / 3;
-        float: left;
-        margin-right: #{$right-margin};
-        img {
-            opacity: .8;
-        }
-        &:last-of-type {
-            margin-right: 0;
-        }
-        &:hover img {
-            opacity: 1;
-        }
-    }
-}
-.design-1 .desc {
-    padding: 15px 15px 20px 15px;
-    position: relative;
-    top: -70px;
-    margin-bottom: -70px;
-    background: $white;
-    @media screen and ($bp-960-min) {
-        padding: 15px 5px 15px 0;
-        top: 0;
-        margin-bottom: 0;
-    }
-    h2 {
-        margin: 8px 0 0 0;
-    }
-    p {
-        margin: 0;
-        padding: 8px 0;
     }
 }
 
