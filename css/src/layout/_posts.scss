@@ -39,7 +39,7 @@
     margin-top: 25px;
     padding: 0px 15px;
     position: relative;
-    p, a, i, span, strong, em, ul, li {
+    p, a, i, span, strong, em, ul, li, b {
         font-size: 21px;
         line-height: 35px;
     }
@@ -52,7 +52,6 @@
     }
     figure {
         margin-left: 0;
-        text-align: center;
     }
     @media screen and ($bp-960-min) {
         width: 100%;

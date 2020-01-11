@@ -592,7 +592,7 @@ div.album {
   margin-top: 25px;
   padding: 0px 15px;
   position: relative; }
-  .post p, .post a, .post i, .post span, .post strong, .post em, .post ul, .post li {
+  .post p, .post a, .post i, .post span, .post strong, .post em, .post ul, .post li, .post b {
     font-size: 21px;
     line-height: 35px; }
   .post a {

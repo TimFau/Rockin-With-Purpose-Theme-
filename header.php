@@ -20,7 +20,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="navlogo">
-                <a href="<?php bloginfo('url'); ?>"><img src="http://www.rockinwithpurpose.com/wp-content/uploads/2017/05/templogo2_min.png" alt="logo"></a>
+                <a href="<?php bloginfo('url'); ?>"><img src="https://www.rockinwithpurpose.com/wp-content/uploads/2017/05/templogo2_min.png" alt="logo"></a>
                 <div id="mobMenuTrigger" class="nav-icon"></div>
             </div>
             <div id="mainNav" class="navigation">
