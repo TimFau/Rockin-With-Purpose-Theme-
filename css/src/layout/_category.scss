@@ -2,6 +2,9 @@
 //   Category Page Styling
 // ---------------------------------------------------------------------------------------------------------------------------------
 #category {
+    @media screen and ($bp-960-min) and ($bp-1200) {
+        padding: 0 2.5% 0 2.5%;
+    }
     h1 {
         text-align: center;
         border-bottom: 4px solid $dark-grey;

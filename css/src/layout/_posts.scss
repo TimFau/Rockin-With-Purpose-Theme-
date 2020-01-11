@@ -8,10 +8,9 @@
         text-align: center;
     }
     .post-container {
-        margin: 0 20%;
-        p {
-            font-size: 21px;
-            line-height: 35px;
+        margin: 0 15px;
+        @media screen and ($bp-960-min) {
+            margin: 0 20%;
         }
     }
     .blogimg {
@@ -40,8 +39,9 @@
     margin-top: 25px;
     padding: 0px 15px;
     position: relative;
-    a, i, span, strong {
-        font-size: inherit;
+    p, a, i, span, strong, em, ul, li {
+        font-size: 21px;
+        line-height: 35px;
     }
     a {
         color: $red;
@@ -61,5 +61,14 @@
         p {
             padding-right: 50px;
         }
+    }
+    @media screen and ($bp-660) {
+        iframe, table {
+            width: 100%;
+            height: 100% !important;
+        }
+    }
+    @media screen and ($bp-480) {
+        word-wrap: break-word;
     }
 }

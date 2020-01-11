@@ -535,6 +535,10 @@ div.album {
         opacity: 1;
         transition: .5s; } }
 
+@media screen and (min-width: 960px) and (max-width: 1200px) {
+  #category {
+    padding: 0 2.5% 0 2.5%; } }
+
 #category h1 {
   text-align: center;
   border-bottom: 4px solid #222224;
@@ -562,10 +566,10 @@ div.album {
   text-align: center; }
 
 #blogContentArea .post-container {
-  margin: 0 20%; }
-  #blogContentArea .post-container p {
-    font-size: 21px;
-    line-height: 35px; }
+  margin: 0 15px; }
+  @media screen and (min-width: 960px) {
+    #blogContentArea .post-container {
+      margin: 0 20%; } }
 
 #blogContentArea .blogimg {
   position: relative; }
@@ -588,8 +592,9 @@ div.album {
   margin-top: 25px;
   padding: 0px 15px;
   position: relative; }
-  .post a, .post i, .post span, .post strong {
-    font-size: inherit; }
+  .post p, .post a, .post i, .post span, .post strong, .post em, .post ul, .post li {
+    font-size: 21px;
+    line-height: 35px; }
   .post a {
     color: #993333;
     text-decoration: underline; }
@@ -605,3 +610,10 @@ div.album {
       box-sizing: border-box; }
       .post p {
         padding-right: 50px; } }
+  @media screen and (max-width: 660px) {
+    .post iframe, .post table {
+      width: 100%;
+      height: 100% !important; } }
+  @media screen and (max-width: 480px) {
+    .post {
+      word-wrap: break-word; } }

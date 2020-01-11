@@ -12,7 +12,7 @@ if (!String.prototype.contains) {
 document.addEventListener('DOMContentLoaded', function(){ 
 
 	// Handle main navigation sub menu trigers
-	var menuItems = document.getElementsByClassName("menu-item-has-children");
+	var menuItems = document.querySelectorAll(".menu-item-has-children > a");
 	for (i = 0; i < menuItems.length; i++) {
 		var item = menuItems[i];
 		item.onclick = function() {
@@ -22,10 +22,10 @@ document.addEventListener('DOMContentLoaded', function(){
 					item.classList.remove("open");
 				}
 			}
-			if(this.classList.contains("open")) {
-				this.classList.remove("open");
+			if(this.parentElement.classList.contains("open")) {
+				this.parentElement.classList.remove("open");
 			} else {
-				this.classList.add("open");
+				this.parentElement.classList.add("open");
 			}
 		}
 	}
