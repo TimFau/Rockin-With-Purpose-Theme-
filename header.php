@@ -33,10 +33,6 @@
             wp_nav_menu( $defaults )
             ?>
             </div>
-            <div class="followBTN">
-                <a href="https://www.facebook.com/RockinWithPurpose/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icons/facebook-box.png"></a>
-                <a href="https://twitter.com/RockinWPurpose"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icons/twitter-box.png"></a>
-            </div>
         </div>
 
     </nav>

@@ -16,20 +16,6 @@
     .blogimg {
         position: relative;
     }
-    @media screen and ($bp-960-min) {
-        .addthis_inline_share_toolbox {
-            position: absolute;
-            position: sticky;
-            float: left;
-            margin-left: -75px;
-            margin-top: 100px;
-            top: 100px;
-            a {
-                display: block;
-            }
-        }
-        
-    }
 }
 
 /*--------------------------------------------------
@@ -69,5 +55,30 @@
     }
     @media screen and ($bp-480) {
         word-wrap: break-word;
+    }
+}
+.post .share-container {
+    > span {
+        font-family: $header-font;
+    }
+}
+.post .share {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 40px 40px 0;
+    a {
+        border: 1px solid $light-grey;
+        padding: 10px;
+        text-align: center;
+        flex-grow: 1;
+        span {
+            margin: 0 auto;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    img {
+        width: 25px;
+        height: 25px;
     }
 }

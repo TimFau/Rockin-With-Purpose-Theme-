@@ -39,7 +39,7 @@ h1 {
   font-weight: 700; }
 
 h2, h3 {
-  font-size: 1.8em;
+  font-size: 1.4em;
   font-family: "zeitung", sans-serif;
   font-weight: 700; }
 
@@ -126,7 +126,7 @@ img {
   display: block; }
 
 .navbar {
-  border-bottom: 6px solid #767676;
+  border-bottom: 1px solid #767676;
   background-color: #222224;
   box-shadow: 0 0 5px #000000;
   position: relative; }
@@ -210,7 +210,7 @@ img {
       padding-right: 0; } }
 
 .navbar li a {
-  transition: 0.3s;
+  transition: 0.5s;
   padding: 16px 0;
   color: white;
   text-transform: uppercase;
@@ -254,8 +254,7 @@ img {
     color: #CE6C6C; }
   .navbar li:hover .sub-menu {
     display: block;
-    height: auto;
-    padding-top: 7px; }
+    height: auto; }
   .navbar li:hover.menu-item-has-children > a:after {
     content: 'keyboard_arrow_down'; }
   .navbar li:last-of-type ul.sub-menu {
@@ -298,19 +297,69 @@ img {
 .footer {
   background: #222224;
   text-align: center;
-  padding: 33px 0;
-  margin: 0px 0 0 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
   width: 100%;
-  clear: both;
-  border-top: 6px solid #767676; }
-  .footer ul {
-    list-style-type: none;
-    padding-left: 0; }
-  .footer li {
-    display: inline-block; }
-    .footer li a {
+  border-top: 4px solid #767676;
+  position: relative; }
+
+.footer .top-footer {
+  padding: 35px; }
+  .footer .top-footer .blurb {
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.4em;
+    line-height: 1.7em;
+    max-width: 565px;
+    margin: 0 auto; }
+    .footer .top-footer .blurb span {
+      display: inline-block;
       color: #ffffff;
-      padding: 0 8px; }
+      font-size: inherit; }
+    .footer .top-footer .blurb:after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 100px;
+      background: #993333;
+      margin: 0 auto;
+      margin-top: 25px; }
+  @media screen and (max-width: 700px) {
+    .footer .top-footer {
+      padding-top: 15px; } }
+
+.footer .bottom-footer {
+  padding: 0 25px 25px 25px; }
+  .footer .bottom-footer p {
+    color: #ffffff;
+    margin: 0; }
+    .footer .bottom-footer p.attribution {
+      padding: 10px 0 0 0;
+      color: #b9b9b9; }
+
+.footer .social-links {
+  display: block;
+  position: absolute;
+  top: 37px;
+  right: 35px;
+  padding: 0 0 25px 0;
+  margin: 0; }
+  .footer .social-links li {
+    padding-bottom: 15px; }
+    .footer .social-links li:hover img {
+      opacity: .7; }
+  .footer .social-links img {
+    transition: opacity .5s ease; }
+  @media screen and (max-width: 700px) {
+    .footer .social-links {
+      position: relative;
+      top: 0;
+      right: 0;
+      padding: 0; }
+      .footer .social-links li {
+        display: inline-block;
+        padding: 25px 15px 0px 15px; } }
 
 .design-1 {
   position: relative;
@@ -574,17 +623,6 @@ div.album {
 #blogContentArea .blogimg {
   position: relative; }
 
-@media screen and (min-width: 960px) {
-  #blogContentArea .addthis_inline_share_toolbox {
-    position: absolute;
-    position: sticky;
-    float: left;
-    margin-left: -75px;
-    margin-top: 100px;
-    top: 100px; }
-    #blogContentArea .addthis_inline_share_toolbox a {
-      display: block; } }
-
 /*--------------------------------------------------
     Post Content
 --------------------------------------------------*/
@@ -601,8 +639,7 @@ div.album {
     .post a:hover {
       text-decoration: underline; }
   .post figure {
-    margin-left: 0;
-    text-align: center; }
+    margin-left: 0; }
   @media screen and (min-width: 960px) {
     .post {
       width: 100%;
@@ -617,3 +654,23 @@ div.album {
   @media screen and (max-width: 480px) {
     .post {
       word-wrap: break-word; } }
+
+.post .share-container > span {
+  font-family: "zeitung", sans-serif; }
+
+.post .share {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 40px 40px 0; }
+  .post .share a {
+    border: 1px solid #767676;
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1; }
+    .post .share a span {
+      margin: 0 auto;
+      display: inline-block;
+      vertical-align: middle; }
+  .post .share img {
+    width: 25px;
+    height: 25px; }

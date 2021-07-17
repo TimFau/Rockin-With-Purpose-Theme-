@@ -22,7 +22,9 @@ gulp.task('sass', function(done) {
 gulp.task('js', function(done) {
     gulp.src('js/src/*.js')
     .pipe(sourcemaps.init())
-    .pipe(uglify())
+    .pipe(uglify().on('error', function(e) {
+        console.log(e)
+    }))
     .pipe(concat('scripts.min.js'))
     .pipe(sourcemaps.write('/'))
     .pipe(gulp.dest('js/dest/'));

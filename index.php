@@ -10,13 +10,11 @@
         <div class="meta">
             <div class="postcategory"><?php the_category(' '); ?></div>
             <div ><h1><?php the_title(); ?></h1></div>
-            <div class="blogmetainfo"><?php the_author(); ?> | <?php the_date(); ?></p></div>
+            <div class="blog-meta-info">By <?php the_author(); ?><?php //echo ' | ' . the_date(); ?></div>
         </div>
     </div>
     <div class="post">
-        <div class="addthis_inline_share_toolbox"></div>
         <p><?php the_content(); ?></p>
-        <div class="addthis_inline_share_toolbox"></div>
         <div class="abouttheauthor">
                         <img src="../wp-content/themes/_RPWordpress1/img/linda.jpg">
                         <div class="abtinfo">
@@ -25,8 +23,6 @@
                         </div>
                         <div class="abtabout">
                         <p>With a passion for Rock and Roll with a purpose-driven message, I've dedicated myself to providing you with all the best news and resources possible for Rock 'n Roll with a Purpose. Rock on!</p>              
-                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                        <div class="addthis_inline_follow_toolbox"></div>
                         </div>
         </div>
     </div>

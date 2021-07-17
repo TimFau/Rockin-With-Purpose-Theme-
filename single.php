@@ -4,7 +4,7 @@
     <div class="heading-container">
         <div class="postcategory"><?php the_category(' '); ?></div>
         <div><h1><?php the_title(); ?></h1></div>
-        <div class="blogmetainfo"><?php the_author(); ?> | <?php the_date(); ?></p></div>
+        <div class="blog-meta-info">By <?php the_author(); ?><?php //the_date(); ?></div>
     </div>
     <div class="post-container">
         <div class="blogheader">
@@ -14,8 +14,21 @@
             </div>
         </div>
         <div class="post">
-            <div class="addthis_inline_share_toolbox"></div>
             <p><?php the_content(); ?></p>
+            <div class="share-container">
+                <span>Share</span>
+                <div class="share">
+                    <?php 
+                        $faceBookShareUrl = "https://www.facebook.com/sharer/sharer.php?u=" . get_post_permalink()
+                    ?>
+                    <a href="<?php echo $faceBookShareUrl ?>" target="popup"  onclick="window.open('<?php echo $faceBookShareUrl ?>'); return false;" aria-label="Facebook"><span class="footer-icon">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icons/twitter-black.svg" />
+                    </span></a>
+                    <a href="https://twitter.com/intent/tweet?url=<?php echo get_post_permalink(); ?>" aria-label="twitter"><span class="footer-icon">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icons/facebook-black.svg" />
+                    </span></a>
+                </div>
+            </div>
         </div>
     </div>
     <?php endwhile; else : ?>

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div id="blogContentArea">
 <div class="post-container">
-    <h2 class="hpheading cat_hpheading"><?php wp_title($sep = '') ?><br class="dhide"><i class="material-icons dhide">keyboard_arrow_down</i></h2>
+    <h2 class="hpheading cat_hpheading"><?php ($sep = '') ?><br class="dhide"><i class="material-icons dhide">keyboard_arrow_down</i></h2>
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <div class="post page">
         <p><?php the_content(); ?></p>
