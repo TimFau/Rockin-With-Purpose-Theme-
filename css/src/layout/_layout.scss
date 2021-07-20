@@ -1,47 +1,85 @@
 // ------------------------------------------------------------------------------------------------------------------------------
 //  Shared Layout Styles
 // ------------------------------------------------------------------------------------------------------------------------------
-// Reusable Design Variation 1
-.design-1 {
+
+.card {
+    --gutter: 3%;
+    --one-third: calc(94% / 3);
+    background: lighten($light-grey, 50%);
+    margin-bottom: var(--gutter);
+    transition: box-shadow .3s;
+    transition: background-color 1s;
     position: relative;
-    @media screen and ($bp-960-min) {
-        margin-top: 25px;
-        padding: 0 3%;
+    &.full-width {
+        width: 100%;
+        .card-img {
+            width: 65%;
+        }
+        .card-desc {
+            width: 32%;
+            box-sizing: border-box;
+        }
+    }
+    &.one-third {
+        width: var(--one-third);
     }
 }
-.design-1 .item {
-    @media screen and ($bp-960-min) {
-        $right-margin: 2%;
-        width: (100 - ($right-margin * 2)) / 3;
-        float: left;
-        margin-right: #{$right-margin};
+.card {
+    &:hover {
+        box-shadow: 1px 1px 7px #00000069;
+        background: lighten($light-grey, 55%);
+        h2 {
+            color: $red;
+            text-decoration: underline;
+        }
         img {
-            opacity: .8;
+            transform: scale(102%);
+            filter: brightness(1.2);
         }
-        &:last-of-type {
-            margin-right: 0;
-        }
-        &:hover img {
-            opacity: 1;
-        }
-    }
-}
-.design-1 .desc {
-    padding: 15px 15px 20px 15px;
-    position: relative;
-    top: -70px;
-    margin-bottom: -70px;
-    background: $white;
-    @media screen and ($bp-960-min) {
-        padding: 15px 5px 15px 0;
-        top: 0;
-        margin-bottom: 0;
     }
     h2 {
-        margin: 8px 0 0 0;
+        font-size: $fs-large;
+        transition: color 1s;
+        @media screen and (max-width: 1050px) {
+            font-size: $fs-medium-large;
+        }
     }
     p {
-        margin: 0;
-        padding: 8px 0;
+        font-size: 1.2em;
+        margin-bottom: 0;
+    }
+    .card-img {
+        overflow: hidden;
+        img {
+            transition: all .6s;
+        }
+    }
+    .card-desc {
+        flex-grow: 1;
+        padding: 0 25px 25px 25px;
+    }
+    .item-link-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .post-category {
+        position: absolute;
+        top: 0;
+        left: -0;
+        z-index: 2;
+        a {
+            display: block;
+            text-transform: uppercase;
+            font-size: $fs-small;
+            // background: $dark-grey-transparent;
+            background: $red;
+            color: $white;
+            padding: 10px 15px;
+            &:hover {
+                background: $dark-grey;
+                text-decoration: none;
+            }
+        }
     }
 }

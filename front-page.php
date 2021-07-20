@@ -1,161 +1,138 @@
 <?php
-/* Template name: Front Page
-*/
+//------------------------------------------------------------//
+//------------------- Home Page Template ---------------------//
+//------------------------------------------------------------//
+
+// Variables
+$count = 0;
 ?>
 
 <?php get_header(); ?>
-<div class="contentarea home">
-<?php
-    $args = array(
-        'post_type' => 'post',
-        'posts_per_page'   => 1,
-        'category_name' =>  'featured',
-    );
-    $query = new WP_Query( $args );
-    $delayValues = [200, 400, 700, 1000, 1300]
-?>
 
-<div class="featuredcontent">
-    <?php 
-    $do_not_duplicate = array();
-	$ft_ct = 0;
-    if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post(); $do_not_duplicate[] = $post->ID; $ft_ct++; ?>
-    <div class="ft_content ct-<?php echo $ft_ct ?>">
-        <div class="item">
-            <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail( 'large' ); ?>
-            </a>
-                <div class="ft_desc">
-                    <div class="postcategory" data-aos="fade-up">
-                        <?php the_category(' '); ?>
-                    </div>
-                    <a href="<?php the_permalink(); ?>">
-                        <h2 class="box" data-aos="fade-up" data-aos-delay="200"><?php the_title(); ?></h2>
-                        <?php 
-                            $ft_short_desc = wp_trim_words( get_the_content(), 40, '...' );
-                        ?>
-                        <p class="short_desc" data-aos="fade-up" data-aos-delay="300"><?php echo $ft_short_desc; ?></p>
-                        <button class="read-more" data-aos="fade-up" data-aos-delay="400">Read More</button>
+<div class="content-area home">
+    <div class="main-content">
+        <div class="wrapper">
+            <section class="recent-content clearfix">
+                <?php
+                // Get Latest Item from 'featured' category
+                $args = array( 'post_type' => 'post', 'posts_per_page'   => 1, 'category_name' =>  'featured');
+                $query_featured = new WP_Query( $args );
+                $do_not_duplicate = array();
+
+                if( $query_featured->have_posts() ) : while( $query_featured->have_posts() ) : $query_featured->the_post(); $do_not_duplicate[] = $post->ID; $count++; ?>
+                <div class="card full-width item ct-<?php echo $count; ?>">
+                    <a href="<?php the_permalink(); ?>" class="item-link-container">
+                        <div class="card-img" data-aos="fade-in" data-aos-duration="600">
+                            <?php the_post_thumbnail('thumbnail'); ?>
+                        </div>
+                        <div class="card-desc" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
+                            <h2><?php the_title(); ?></h2>
+                            <p><?php echo wp_trim_words( get_the_content(), 40, '...' ); ?></p>
+                        </div>
                     </a>
                 </div>
-        </div>
-    </div>
-    <?php endwhile; endif; wp_reset_postdata(); ?>
-</div>
+                <?php endwhile; endif;
+                /* End Get Latest Item from 'featured' category */ ?>
 
-<?php
-    $args = array(
-        'post_type' =>  'post',
-        'posts_per_page'   => 3,
-        'post__not_in' => $do_not_duplicate,
-        'category__not_in'  => array( 5 )
-    );
-    $query_rn = new WP_Query( $args );
-?>
-<div class="main-content">
-<section class="recentnews design-1 clearfix wrapper">
-    <div class="heading-box">
-        <h3 class="hp-heading hp-heading_hp" data-aos="fade-in" data-aos-duration="600">Recent Content<i class="material-icons dhide">keyboard_arrow_down</i></h3>
-    </div>
-    <?php if( $query_rn->have_posts() ) : while( $query_rn->have_posts() ) : $query_rn->the_post(); ?>
-    <div class="item recent_item">
-        <div class="ri_img" data-aos="fade-in" data-aos-duration="600">
-            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
-        </div>
-        <div class="desc recent_desc" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
-            <div class="postcategory">
-                <?php the_category(' '); ?>
-            </div>
-            <a href="<?php the_permalink(); ?>">
-                <h2><?php the_title(); ?></h2>
-                <?php 
-                    $ft_short_desc = wp_trim_words( get_the_content(), 40, '...' );
-                ?>
-                <p><?php echo $ft_short_desc; ?></p>
-                <button class="read-more">Read More</button>
-            </a>
-        </div>
-    </div>
-    <?php endwhile; endif; wp_reset_postdata(); ?>
-</section>
-<?php
-    
-    $args = array(
-        'post_type' => 'post',
-        'category_name' =>  'albums',
-        'posts_per_page'   => 4,
-    );
-    $query_nr = new WP_Query( $args );
-?>
-    
-<!-- New Releases -->
-<section class="new-releases clearfix wrapper">
-    <div class="container">
-        <div class="heading-box heading-right">
-            <a href="category/albums/">
-            <h3 class="hp-heading hp-heading_hp" data-aos="fade-in">Album's You Need to Listen to<i class="material-icons dhide">keyboard_arrow_down</i></h3>
-            </a>
-        </div>
-        <?php $i = 0; if( $query_nr->have_posts() ) : while( $query_nr->have_posts() ) : $query_nr->the_post(); $i++; ?>
-        <div class="album <?php echo 'ct-' . $i; ?>" data-aos="fade-left" data-aos-delay="<?php echo $delayValues[$i]; ?>">
-            <div class="albumimg"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a></div>
-            <div class="albumdesc">
-                <a href="<?php the_permalink(); ?>">
-                    <h2><?php the_title(); ?></h2>
-                    <?php 
-                        $ft_short_desc = wp_trim_words( get_the_content(), 20, '...' );
-                    ?>
-                    <p><?php echo $ft_short_desc; ?></p>
-                    <button class="read-more">Read More</button>
-                </a>
-            </div>
-        </div> 
-        <?php endwhile; endif; wp_reset_postdata(); ?>
-    </div>
-</section>
-    
-<?php
-    
-    $args = array(
-        'post_type' => 'post',
-        'posts_per_page'   => 3,
-        'category_name' =>  'artist-spotlight',
-        'post__not_in' => $do_not_duplicate,
-    );
-    $query_ua = new WP_Query( $args );
-?>
-<!-- Upcomming artists -->
-<section class="upcoming design-1 clearfix wrapper">
-    <div class="container">
-        <div class="heading-box">
-            <a href="category/artist-spotlight/">
-            <h3 class="hp-heading hp-heading_hp">Artist Spotlight<br class="dhide"><i class="material-icons dhide">keyboard_arrow_down</i></h3>
-            </a>
-        </div>
-        <?php if( $query_ua->have_posts() ) : while( $query_ua->have_posts() ) : $query_ua->the_post(); ?>
-        <div class="item upcomingartist">
-            <div class="ri_img" data-aos="fade-in">
-                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
-            </div>
-            <div class="desc recent_desc" data-aos="fade-up" data-aos-delay="200">
-                <div class="postcategory">
-                    <?php the_category(' '); ?>
+                <?php
+                // Get Recent Content (exluding previous)
+                $args = array(
+                    'post_type' =>  'post',
+                    'posts_per_page'   => 5,
+                    'post__not_in' => $do_not_duplicate,
+                    'category__not_in'  => array( 5 )
+                );
+                $query_recent = new WP_Query( $args );
+                if( $query_recent->have_posts() ) : while( $query_recent->have_posts() ) : $query_recent->the_post(); $count++; ?>
+                <div class="card one-third item ct-<?php echo $count; ?>">
+                    <!-- <span class="post-category"><?php //the_category(' '); ?></span> -->
+                    <a href="<?php the_permalink(); ?>" class="item-link-container">
+                        <div class="card-img" data-aos="fade-in" data-aos-duration="600">
+                            <?php the_post_thumbnail('thumbnail'); ?>
+                        </div>
+                        <div class="card-desc" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                            <h2><?php the_title(); ?></h2>
+                            <p><?php echo wp_trim_words( get_the_content(), 40, '...' ); ?></p>
+                        </div>
+                    </a>
                 </div>
-                <a href="<?php the_permalink(); ?>">
-                    <h2><?php the_title(); ?></h2>
-                    <?php 
-                        $ft_short_desc = wp_trim_words( get_the_content(), 40, '...' );
-                    ?>
-                    <p><?php echo $ft_short_desc; ?></p>
-                    <button class="read-more">Read More</button>
-                </a>
-            </div>
+                <?php endwhile; endif; wp_reset_postdata();
+                /* End Get Recent Content */ ?>
+            </section>
         </div>
-        <?php endwhile; endif; wp_reset_postdata(); ?>
+        
+        <!-- Featured Albums -->
+        <section class="featured-albums clearfix wrapper">
+            <div class="container">
+                <div class="heading-box heading-right">
+                    <a href="category/albums/">
+                        <h3 class="hp-heading hp-heading_hp" data-aos="fade-in">Album's We Think You'll Love<span class="line" data-aos="fade-right" data-aos-duration="1000"></span></h3>
+                    </a>
+                </div>
+                <div class="album-wrapper">
+                    <?php
+                    // Get Albums
+                    $args = array(
+                        'post_type' => 'post',
+                        'category_name' =>  'albums',
+                        'posts_per_page'   => 4,
+                    );
+                    $query_albums = new WP_Query( $args );
+                    $i = 0; if( $query_albums->have_posts() ) : while( $query_albums->have_posts() ) : $query_albums->the_post(); $i++; ?>
+                    <div class="album <?php echo 'ct-' . $i; ?>" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+                        <div class="albumimg">
+                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
+                        </div>
+                        <div class="albumdesc">
+                            <a href="<?php the_permalink(); ?>">
+                                <h2><?php the_title(); ?></h2>
+                                <?php 
+                                    $ft_short_desc = wp_trim_words( get_the_content(), 20, '...' );
+                                ?>
+                                <p><?php echo $ft_short_desc; ?></p>
+                            </a>
+                        </div>
+                    </div>
+                    <?php endwhile; endif; wp_reset_postdata();
+                    /* End Get Albums */ ?>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Upcomming artists -->
+        <section class="upcoming-artists clearfix wrapper">
+            <div class="container">
+                <div class="heading-box">
+                    <a href="category/artist-spotlight/">
+                        <h3 class="hp-heading hp-heading_hp">Artist Spotlight<span class="line" data-aos="fade-left" data-aos-duration="1000"></span><br class="dhide"></h3>
+                    </a>
+                </div>
+                <?php
+                // Get Artist Spotlight Content
+                $args = array(
+                    'post_type' => 'post',
+                    'posts_per_page'   => 3,
+                    'category_name' =>  'artist-spotlight',
+                    'post__not_in' => $do_not_duplicate,
+                );
+                $query_artists = new WP_Query( $args );
+                if( $query_artists->have_posts() ) : while( $query_artists->have_posts() ) : $query_artists->the_post(); ?>
+                <div class="card one-third item">
+                    <a href="<?php the_permalink(); ?>" class="item-link-container">
+                        <div class="card-img" data-aos="fade-in">
+                            <?php the_post_thumbnail('thumbnail'); ?>
+                        </div>
+                        <div class="card-desc" data-aos="fade-up" data-aos-delay="200">
+                            <h2><?php the_title(); ?></h2>
+                            <p><?php echo wp_trim_words( get_the_content(), 40, '...' ); ?></p>
+                        </div>
+                    </a>
+                </div>
+                <?php endwhile; endif; wp_reset_postdata(); 
+                /* End Get Artist Spotlight Content */ ?>
+            </div>
+        </section>
     </div>
-</section>
 </div>
 
-
-</div>
 <?php get_footer(); ?>

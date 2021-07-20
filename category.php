@@ -27,8 +27,8 @@ $cat_posts = new WP_Query( $args );
                     ?>
                     </a>
                 </div>
-                <div class="desc">
-                    <div class="postcategory">
+                <div class="card-desc">
+                    <div class="post-category">
                         <?php the_category(' '); ?>
                     </div>
                     <a href="<?php the_permalink(); ?>">

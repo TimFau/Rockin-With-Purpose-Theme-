@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<div id="blogContentArea" class="clearfix">
+<div id="blogcontent-area" class="clearfix">
     <div class="heading-container">
-        <div class="postcategory"><?php the_category(' '); ?></div>
+        <div class="post-category"><?php the_category(' '); ?></div>
         <div><h1><?php the_title(); ?></h1></div>
         <div class="blog-meta-info">By <?php the_author(); ?><?php //the_date(); ?></div>
     </div>

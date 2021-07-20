@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div id="blogContentArea">
+<div id="blogcontent-area">
 <div class="post-container">
     <h2 class="hp-heading cat_hp-heading"><?php ($sep = '') ?><br class="dhide"><i class="material-icons dhide">keyboard_arrow_down</i></h2>
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -25,7 +25,7 @@
             <div class="lpitem">
                 <div class="lpthumb"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a></div>
                 <div class="lpmeta">
-                    <div class="postcategory"><?php the_category(' '); ?></div>
+                    <div class="post-category"><?php the_category(' '); ?></div>
                     <br>
                     <a href="<?php the_permalink(); ?>"><h2 class="box"><?php the_title(); ?></h2></a>
                     <div class="lpmetainfo"><p><?php the_author(); ?> | <?php echo get_the_date(); ?></p></div>
