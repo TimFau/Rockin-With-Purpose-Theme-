@@ -18,7 +18,7 @@ Theme Name: Rockin' With Purpose
 Author: Tim Fau
 Description: Custom theme built for Rockin' With Purpose online blog/magazine.
 Version: 3
-Last Modified: 01/04/20
+Last Modified: 07/19/21
 Tags: RWP, Tim Fau
 */
 * {
@@ -75,6 +75,9 @@ img {
   height: 100%;
   display: block; }
 
+.wrapper {
+  overflow: hidden; }
+
 .postcategory {
   font-weight: 700;
   text-transform: uppercase;
@@ -95,10 +98,10 @@ img {
 @media screen and (min-width: 960px) {
   .dhide {
     display: none; }
-  .headingbox {
+  .heading-box {
     padding-bottom: 15px;
-    overflow: hidden; }
-    .headingbox p {
+    display: flex; }
+    .heading-box p {
       color: #767676;
       text-transform: uppercase;
       font-weight: 600;
@@ -362,11 +365,11 @@ img {
         padding: 25px 15px 0px 15px; } }
 
 .design-1 {
-  position: relative;
-  max-width: 1200px; }
+  position: relative; }
   @media screen and (min-width: 960px) {
     .design-1 {
-      margin-top: 25px; } }
+      margin-top: 25px;
+      padding: 0 3%; } }
 
 @media screen and (min-width: 960px) {
   .design-1 .item {
@@ -407,7 +410,7 @@ img {
     .home h3 i {
       display: none; } }
 
-.hpheading {
+.hp-heading {
   color: #ffffff;
   text-align: center;
   background-color: #222224;
@@ -417,23 +420,31 @@ img {
   margin: 0 0;
   line-height: 22px; }
   @media screen and (min-width: 960px) {
-    .hpheading {
+    .hp-heading {
       color: #222224;
       text-align: left;
       background: none;
       border: 0;
-      padding: 0 25px 0 0;
+      padding: 0 25px 50px 0;
       position: relative;
       display: inline-block;
       text-transform: uppercase; }
-      .hpheading:after {
+      .hp-heading:after {
         content: "";
         height: 4px;
         position: absolute;
         width: 1920px;
-        top: 48%;
-        left: 100%;
-        background-color: #222224; } }
+        top: 10px;
+        right: 100%;
+        background-color: #222224;
+        opacity: .1; } }
+
+.heading-right {
+  justify-content: flex-end; }
+  .heading-right .hp-heading:after {
+    right: 0;
+    left: initial;
+    margin-right: 30px; }
 
 /* ------------------------------------------------------------------------------------------------------------------------------
   Featured Content Area
@@ -492,32 +503,27 @@ img {
   Remaining Content
 --------------------------------------------- */
 @media screen and (min-width: 960px) {
-  .not_featured section {
+  .main-content section {
     margin: 50px auto;
     padding-left: 2.5%;
     padding-right: 2.5%;
     box-sizing: border-box; } }
 
-@media screen and (min-width: 1200px) {
-  .not_featured section {
-    padding-left: 0%;
-    padding-right: 0%; } }
-
 /* ------------------------------------------
   New Releases
 --------------------------------------------- */
-.newreleases {
+.new-releases {
   background: #222224;
   margin-top: 25px; }
   @media screen and (min-width: 960px) {
-    .newreleases {
-      padding: 45px 0 60px 0; }
-      .newreleases .container {
+    .new-releases {
+      padding: 100px 0 120px 0; }
+      .new-releases .container {
         max-width: 1200px;
         margin: 0 auto; } }
-  .newreleases h3 {
+  .new-releases h3 {
     color: #ffffff; }
-    .newreleases h3:after {
+    .new-releases h3:after {
       background: #ffffff; }
 
 div.album {

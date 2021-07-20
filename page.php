@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div id="blogContentArea">
 <div class="post-container">
-    <h2 class="hpheading cat_hpheading"><?php ($sep = '') ?><br class="dhide"><i class="material-icons dhide">keyboard_arrow_down</i></h2>
+    <h2 class="hp-heading cat_hp-heading"><?php ($sep = '') ?><br class="dhide"><i class="material-icons dhide">keyboard_arrow_down</i></h2>
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <div class="post page">
         <p><?php the_content(); ?></p>
@@ -20,7 +20,7 @@
     ?>
     <div class="lp_block">
         <div class="latestposts">
-            <h3  class="hpheading">Latest Posts<br class="dhide"><i class="material-icons dhide">keyboard_arrow_down</i></h3>
+            <h3  class="hp-heading">Latest Posts<br class="dhide"><i class="material-icons dhide">keyboard_arrow_down</i></h3>
             <?php if( $query_rnb->have_posts() ) : while( $query_rnb->have_posts() ) : $query_rnb->the_post(); ?>
             <div class="lpitem">
                 <div class="lpthumb"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a></div>

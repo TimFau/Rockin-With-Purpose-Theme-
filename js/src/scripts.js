@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function(){
 	var mobMenuTrigger = document.getElementById("mobMenuTrigger");
 	var mainNav = document.getElementById("mainNav");
 
+	AOS.init();
+
 	// Handle main navigation sub menu trigers
 	for (i = 0; i < menuItems.length; i++) {
 		var item = menuItems[i];

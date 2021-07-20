@@ -8,7 +8,7 @@
         display: none;
     }
 }
-.hpheading {
+.hp-heading {
     color: $white;
     text-align: center;
     background-color: $dark-grey;
@@ -22,7 +22,7 @@
         text-align: left;
         background: none;
         border: 0;
-        padding: 0 25px 0 0;
+        padding: 0 25px 50px 0;
         position: relative;
         display: inline-block;
         text-transform: uppercase;
@@ -31,10 +31,19 @@
             height: 4px;
             position: absolute;
             width: 1920px;
-            top: 48%;
-            left: 100%;
+            top: 10px;
+            right: 100%;
             background-color: $dark-grey;
+            opacity: .1;
         }
+    }
+}
+.heading-right {
+    justify-content: flex-end;
+    .hp-heading:after {
+        right: 0;
+        left: initial;
+        margin-right: 30px;
     }
 }
 /* ------------------------------------------------------------------------------------------------------------------------------
@@ -102,27 +111,23 @@
 /* ------------------------------------------
   Remaining Content
 --------------------------------------------- */
-.not_featured section {
+.main-content section {
     @media screen and ($bp-960-min) {
         margin: 50px auto;
         padding-left: 2.5%;
         padding-right: 2.5%;
         box-sizing: border-box;
     }
-    @media screen and ($bp-1200-min) {
-        padding-left: 0%;
-        padding-right: 0%;
-    }
 }
 
 /* ------------------------------------------
   New Releases
 --------------------------------------------- */
-.newreleases {
+.new-releases {
     background: $dark-grey;
     margin-top: 25px;
     @media screen and ($bp-960-min) {
-        padding: 45px 0 60px 0;
+        padding: 100px 0 120px 0;
         .container {
             max-width: $max-width-desktop;
             margin: 0 auto;

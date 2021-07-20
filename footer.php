@@ -10,7 +10,7 @@
                 </span></a></li>
             </ul>
             <div class="top-footer">
-                <div class="blurb">Born out of a love for music and it's ability to go deeper into the souls of its listeners, Rockin With Purpose is passionate about supporting bands and artists who honestly reflect the issues of life <span>that we all face.</span></div>
+                <div class="blurb" data-aos="fade-up" data-aos-delay="500">Born out of a love for music and it's ability to go deeper into the souls of its listeners, Rockin With Purpose is passionate about supporting bands and artists who honestly reflect the issues of life <span>that we all face.</span></div>
             </div>
             <div class="bottom-footer">
                 <p class="copyright">©<?php echo date('Y'); ?> Rockin' With Purpose</p>

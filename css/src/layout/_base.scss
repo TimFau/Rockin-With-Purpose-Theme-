@@ -3,7 +3,7 @@ Theme Name: Rockin' With Purpose
 Author: Tim Fau
 Description: Custom theme built for Rockin' With Purpose online blog/magazine.
 Version: 3
-Last Modified: 01/04/20
+Last Modified: 07/19/21
 Tags: RWP, Tim Fau
 */
 
@@ -66,6 +66,9 @@ img {
     height: 100%;
     display: block;
 }
+.wrapper {
+    overflow: hidden;
+}
 .postcategory {
     font-weight: 700;
     text-transform: uppercase;
@@ -92,9 +95,9 @@ img {
         // hide from desktop
         display: none;
     }
-    .headingbox {
+    .heading-box {
         padding-bottom: 15px;
-        overflow: hidden;
+        display: flex;
         p {
             color: $light-grey;
             text-transform: uppercase;
