@@ -19,9 +19,9 @@
 
 <body>
     <!-- Header & Navigation -->
-    <nav class="navbar">
+    <nav class="nav-bar">
         <div class="container">
-            <div class="navlogo">
+            <div class="nav-logo">
                 <a href="<?php bloginfo('url'); ?>"><img src="https://www.rockinwithpurpose.com/wp-content/uploads/2017/05/templogo2_min.png" alt="logo"></a>
                 <div id="mobMenuTrigger" class="nav-icon"></div>
             </div>
@@ -30,7 +30,7 @@
               $defaults = array(
                 'container' => false, 
                 'theme_location' => 'main-menu',
-                'menu_class' => 'nav navbar-nav',
+                'menu_class' => 'nav nav-bar-nav',
               );
             wp_nav_menu( $defaults )
             ?>

@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 //   Header
 // ---------------------------------------------------------------------------------------------------------------------------------
-.navbar {
+.nav-bar {
     border-bottom: 1px solid $light-grey;
     background-color: $dark-grey;
     box-shadow: 0 0 5px $black;
@@ -13,7 +13,7 @@
         }
     }
 }
-.navlogo {
+.nav-logo {
     width: 100%;
     padding: 25px 0;
     position: relative;
@@ -27,13 +27,13 @@
         width: auto;
         padding: 15px 0;
         a {
-            max-width: 120px;
-            margin-left: 25px;
+            max-width: 100px;
+            margin-left: 5px;
         }
     }
 }
 /* Navigation */
-.navbar .navigation {
+.nav-bar .navigation {
     display: none;
     @media screen and ($bp-960-min) {
         display: block !important; // important counteracts bug with mobile nav JS
@@ -46,7 +46,7 @@
         }
     }
 }
-.navbar .nav-icon {
+.nav-bar .nav-icon {
     display: block;
     position: absolute;
     right: 25px;
@@ -66,7 +66,7 @@
         display: none;
     }
 }
-.navbar ul {
+.nav-bar ul {
     padding-left: 0;
     margin: 0;
     @media screen and ($bp-960-min) {
@@ -75,10 +75,12 @@
 }
 .nav > li {
     @media screen and ($bp-960-min) {
-        padding-right: 25px;
+        &.menu-item-has-children {
+            padding-right: 25px;
+        }
     }
 }
-.navbar li {
+.nav-bar li {
     position: relative;
     background: $light-grey;
     @media screen and ($bp-960-min) {
@@ -96,7 +98,7 @@
         }
     }
 }
-.navbar li a {
+.nav-bar li a {
     transition: 0.5s;
     padding: 16px 0;
     color: white;
@@ -111,14 +113,14 @@
         height: 100%;
         border: 0;
         margin-right: 30px;
-        padding: 48px 0 48px 2px;
+        padding: 43px 0 40px 2px;
         &:hover {
             color: $red;
         }
     }
 }
 // hover & sub-menu styling
-.navbar li {
+.nav-bar li {
     &:hover > a, &.open > a {
         background: $dark-grey;
     }
@@ -135,7 +137,7 @@
         padding-left: 5px;
         top: 15px;
         @media screen and ($bp-960-min) {
-            top: 44px;
+            top: 40px;
         }
     }
     &.menu-item-has-children.open > a:after {
@@ -164,7 +166,7 @@
         
     }
 }
-.navbar ul.sub-menu {
+.nav-bar ul.sub-menu {
     display: none;
     background: #cccccc;
     z-index: 1;
@@ -191,6 +193,6 @@
         }
     }
 }
-.navbar .followBTN {
+.nav-bar .followBTN {
     display: none;
 }

@@ -92,8 +92,8 @@ img {
     }
 // }
 @media screen and ($bp-1200-min) {
-    .navbar .container, .cat_post-container, #blogcontent-area {
-        max-width: $max-width-desktop;
+    .nav-bar .container, .cat_post-container, #blogcontent-area {
+        max-width: $max-width-desktop - 70;
         margin: 0 auto;
     }
 }
