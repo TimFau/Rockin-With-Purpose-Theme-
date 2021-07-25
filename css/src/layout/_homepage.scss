@@ -53,16 +53,6 @@
         position: absolute;
     }
 }
-.heading-right {
-    justify-content: flex-end;
-    .hp-heading {
-        &:after {
-            right: 0;
-            left: initial;
-            bottom: -10px;
-        }
-    }
-}
 
 /* ------------------------------------------
   Recent Content

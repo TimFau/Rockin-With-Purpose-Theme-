@@ -8,7 +8,7 @@ Tags: RWP, Tim Fau
 */
 
 // ------------------------------------------------------------------------------------------------------------------------------
-//  General CSS
+//  Global CSS
 // ------------------------------------------------------------------------------------------------------------------------------
 * {
     font-family: $main-font;
@@ -21,6 +21,7 @@ body {
     margin: 0 0;
     background-color: $white;
     width: 100%;
+    overflow-x: hidden;
 }
 h1 {
     font-size: $fs-large;
@@ -75,24 +76,14 @@ img {
         display: none;
     }
 }
-// @media screen and ($bp-960-min) {
+@media screen and ($bp-960-min) {
     .dhide {
         // hide from desktop
         display: none;
     }
-    .heading-box {
-        padding-bottom: 50px;
-        display: flex;
-        p {
-            color: $light-grey;
-            text-transform: uppercase;
-            font-weight: 600;
-            padding-top: 5px;
-        }
-    }
-// }
+}
 @media screen and ($bp-1200-min) {
-    .nav-bar .container, .cat_post-container, #blogcontent-area {
+    .nav-bar .container, .cat_post-container, #blog-content-area {
         max-width: $max-width-desktop - 70;
         margin: 0 auto;
     }

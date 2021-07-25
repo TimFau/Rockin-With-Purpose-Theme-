@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div id="blogcontent-area">
+<div id="blog-content-area">
 <div class="post-container">
     <h2 class="hp-heading cat_hp-heading"><?php ($sep = '') ?><br class="dhide"><i class="material-icons dhide">keyboard_arrow_down</i></h2>
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

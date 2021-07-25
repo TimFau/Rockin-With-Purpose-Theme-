@@ -2,18 +2,29 @@
 //   Posts Page Styling
 // ---------------------------------------------------------------------------------------------------------------------------------
 
-#blogcontent-area {
+#blog-content-area {
     .heading-container {
-        padding: 5% 5% 3.5% 5%;
+        padding: 5% 15px 3.5% 15px;
         text-align: center;
+        h1 {
+            text-align: center;
+        }
+        h1 span,
+        h1:after {
+            width: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -15px;
+            height: 2px;
+        }
     }
     .post-container {
         margin: 0 15px;
         @media screen and ($bp-960-min) {
-            margin: 0 20%;
+            margin: 0 15%;
         }
     }
-    .blogimg {
+    .blog-img {
         position: relative;
     }
 }
@@ -26,8 +37,11 @@
     padding: 0px 15px;
     position: relative;
     p, a, i, span, strong, em, ul, li, b {
-        font-size: 21px;
-        line-height: 35px;
+        font-size: 18px;
+        line-height: 32px;
+    }
+    strong {
+        font-weight: 600;
     }
     a {
         color: $red;
@@ -41,7 +55,7 @@
     }
     @media screen and ($bp-960-min) {
         width: 100%;
-        padding: 0 2% 0 3%;
+        padding: 0 5%;
         box-sizing: border-box;
         p {
             padding-right: 50px;

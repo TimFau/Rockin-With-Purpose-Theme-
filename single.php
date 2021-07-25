@@ -1,15 +1,19 @@
 <?php get_header(); ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<div id="blogcontent-area" class="clearfix">
+<div id="blog-content-area" class="clearfix">
     <div class="heading-container">
         <div class="post-category"><?php the_category(' '); ?></div>
-        <div><h1><?php the_title(); ?></h1></div>
+        <div class="heading-box heading-center">
+            <a href="category/albums/">
+                <h1 class="hp-heading hp-heading_hp" data-aos="fade-in"><?php the_title(); ?><span class="line" data-aos="fade-right" data-aos-duration="1000"></span></h1>
+            </a>
+        </div>
         <div class="blog-meta-info">By <?php the_author(); ?><?php //the_date(); ?></div>
     </div>
     <div class="post-container">
         <div class="blogheader">
-            <div class="blogimg"><?php
-                if ( in_category( '5' ) ){ the_post_thumbnail('large'); } else { the_post_thumbnail('thumbnail'); } 
+            <div class="blog-img"><?php
+                if ( in_category( '5' ) ){ the_post_thumbnail('large'); } else { the_post_thumbnail('large'); } 
                 ?>
             </div>
         </div>

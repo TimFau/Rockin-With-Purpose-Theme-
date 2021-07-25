@@ -31,7 +31,8 @@ Tags: RWP, Tim Fau
 body {
   margin: 0 0;
   background-color: #ffffff;
-  width: 100%; }
+  width: 100%;
+  overflow-x: hidden; }
 
 h1 {
   font-size: 2.8em;
@@ -82,20 +83,12 @@ img {
   .mnone {
     display: none; } }
 
-.dhide {
-  display: none; }
-
-.heading-box {
-  padding-bottom: 50px;
-  display: flex; }
-  .heading-box p {
-    color: #767676;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding-top: 5px; }
+@media screen and (min-width: 960px) {
+  .dhide {
+    display: none; } }
 
 @media screen and (min-width: 1200px) {
-  .nav-bar .container, .cat_post-container, #blogcontent-area {
+  .nav-bar .container, .cat_post-container, #blog-content-area {
     max-width: 1200px;
     margin: 0 auto; } }
 
@@ -114,6 +107,43 @@ img {
 
 .clearfix {
   display: block; }
+
+.heading-box {
+  padding-bottom: 50px;
+  display: flex; }
+  .heading-box.heading-right {
+    justify-content: flex-end; }
+    .heading-box.heading-right .hp-heading:after {
+      right: 0;
+      left: initial;
+      bottom: -10px; }
+  .heading-box.heading-center {
+    justify-content: center; }
+    .heading-box.heading-center .hp-heading:after {
+      width: 100%; }
+
+.heading-box h1 {
+  line-height: 1.2em; }
+
+.heading-box p {
+  color: #767676;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-top: 5px; }
+
+.post-category {
+  margin-bottom: 20px; }
+  .post-category a {
+    background: transparent;
+    color: #993333;
+    padding: 5px 10px;
+    margin: 0 5px;
+    transition: all 1s;
+    font-weight: 800;
+    text-transform: uppercase; }
+    .post-category a:hover {
+      background: #993333;
+      color: #ffffff; }
 
 .nav-bar {
   border-bottom: 1px solid #767676;
@@ -463,13 +493,6 @@ img {
     right: 0;
     position: absolute; }
 
-.heading-right {
-  justify-content: flex-end; }
-  .heading-right .hp-heading:after {
-    right: 0;
-    left: initial;
-    bottom: -10px; }
-
 /* ------------------------------------------
   Recent Content
 --------------------------------------------- */
@@ -671,17 +694,26 @@ img {
       #category .design-1 .item:nth-of-type(3n) {
         margin-right: 0; } }
 
-#blogcontent-area .heading-container {
-  padding: 5% 5% 3.5% 5%;
+#blog-content-area .heading-container {
+  padding: 5% 15px 3.5% 15px;
   text-align: center; }
+  #blog-content-area .heading-container h1 {
+    text-align: center; }
+  #blog-content-area .heading-container h1 span,
+  #blog-content-area .heading-container h1:after {
+    width: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    height: 2px; }
 
-#blogcontent-area .post-container {
+#blog-content-area .post-container {
   margin: 0 15px; }
   @media screen and (min-width: 960px) {
-    #blogcontent-area .post-container {
-      margin: 0 20%; } }
+    #blog-content-area .post-container {
+      margin: 0 15%; } }
 
-#blogcontent-area .blogimg {
+#blog-content-area .blog-img {
   position: relative; }
 
 /*--------------------------------------------------
@@ -692,8 +724,10 @@ img {
   padding: 0px 15px;
   position: relative; }
   .post p, .post a, .post i, .post span, .post strong, .post em, .post ul, .post li, .post b {
-    font-size: 21px;
-    line-height: 35px; }
+    font-size: 18px;
+    line-height: 32px; }
+  .post strong {
+    font-weight: 600; }
   .post a {
     color: #993333;
     text-decoration: underline; }
@@ -704,7 +738,7 @@ img {
   @media screen and (min-width: 960px) {
     .post {
       width: 100%;
-      padding: 0 2% 0 3%;
+      padding: 0 5%;
       box-sizing: border-box; }
       .post p {
         padding-right: 50px; } }

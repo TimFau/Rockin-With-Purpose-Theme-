@@ -1,0 +1,49 @@
+.heading-box {
+    padding-bottom: 50px;
+    display: flex;
+    &.heading-right {
+        justify-content: flex-end;
+        .hp-heading {
+            &:after {
+                right: 0;
+                left: initial;
+                bottom: -10px;
+            }
+        }
+    }
+    &.heading-center {
+        justify-content: center;
+        .hp-heading {
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+}
+.heading-box {
+    h1 {
+        line-height: 1.2em;
+    }
+    p {
+        color: $light-grey;
+        text-transform: uppercase;
+        font-weight: 600;
+        padding-top: 5px;
+    }
+}
+.post-category {
+    margin-bottom: 20px;
+    a {
+        background: transparent;
+        color: $red;
+        padding: 5px 10px;
+        margin: 0 5px;
+        transition: all 1s;
+        font-weight: 800;
+        text-transform: uppercase;
+        &:hover {
+            background: $red;
+            color: $white;
+        }
+    }
+}

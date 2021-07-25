@@ -1,10 +1,10 @@
 <?php get_header(); ?>
-<div id="blogcontent-area">
+<div id="blog-content-area">
 <div class="post-container">
     
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <div class="blogheader">
-        <div class="blogimg"><?php
+        <div class="blog-img"><?php
             if ( in_category( '7' ) ){ the_post_thumbnail('large'); }           else { the_post_thumbnail('thumbnail'); } 
             ?></div>
         <div class="meta">
