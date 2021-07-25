@@ -21,7 +21,7 @@ $count = 0;
 
                 if( $query_featured->have_posts() ) : while( $query_featured->have_posts() ) : $query_featured->the_post(); $do_not_duplicate[] = $post->ID; $count++; ?>
                 <div class="card full-width item ct-<?php echo $count; ?>">
-                    <a href="<?php the_permalink(); ?>" class="item-link-container">
+                    <a href="<?php the_permalink(); ?>" class="item-container">
                         <div class="card-img" data-aos="fade-in" data-aos-duration="600">
                             <?php the_post_thumbnail('thumbnail'); ?>
                         </div>
@@ -46,7 +46,7 @@ $count = 0;
                 if( $query_recent->have_posts() ) : while( $query_recent->have_posts() ) : $query_recent->the_post(); $count++; ?>
                 <div class="card one-third item ct-<?php echo $count; ?>">
                     <!-- <span class="post-category"><?php //the_category(' '); ?></span> -->
-                    <a href="<?php the_permalink(); ?>" class="item-link-container">
+                    <a href="<?php the_permalink(); ?>" class="item-container">
                         <div class="card-img" data-aos="fade-in" data-aos-duration="600">
                             <?php the_post_thumbnail('thumbnail'); ?>
                         </div>
@@ -118,7 +118,7 @@ $count = 0;
                 $query_artists = new WP_Query( $args );
                 if( $query_artists->have_posts() ) : while( $query_artists->have_posts() ) : $query_artists->the_post(); ?>
                 <div class="card one-third item">
-                    <a href="<?php the_permalink(); ?>" class="item-link-container">
+                    <a href="<?php the_permalink(); ?>" class="item-container">
                         <div class="card-img" data-aos="fade-in">
                             <?php the_post_thumbnail('thumbnail'); ?>
                         </div>

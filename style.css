@@ -429,7 +429,7 @@ img {
   flex-grow: 1;
   padding: 0 25px 25px 25px; }
 
-.card .item-link-container {
+.card .item-container {
   display: flex;
   flex-direction: column;
   height: 100%; }
@@ -525,7 +525,7 @@ img {
         .recent-content .item.ct-1 a {
           display: flex;
           flex-direction: column; }
-        .recent-content .item.ct-1 .item-link-container,
+        .recent-content .item.ct-1 .item-container,
         .recent-content .item.ct-1 .card-img,
         .recent-content .item.ct-1 .card-desc {
           width: 100%; } }
@@ -543,7 +543,7 @@ img {
   @media screen and (max-width: 660px) {
     .recent-content .item {
       width: 100%; } }
-  .recent-content .ct-1 .item-link-container {
+  .recent-content .ct-1 .item-container {
     flex-direction: row;
     justify-content: space-between; }
 
@@ -668,31 +668,31 @@ img {
   .upcoming-artists .card {
     width: 100%; } }
 
-@media screen and (min-width: 960px) and (max-width: 1200px) {
-  #category {
-    padding: 0 2.5% 0 2.5%; } }
-
-#category h1 {
-  text-align: center;
-  border-bottom: 4px solid #222224;
-  margin: 0;
-  padding: 25px 0; }
+#category {
+  max-width: 1270px;
+  margin: 0 auto; }
+  #category > div {
+    padding: 0 35px; }
+  #category .heading-box {
+    margin: 50px 0 15px 0;
+    overflow: hidden; }
+  #category .cat-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+  @media screen and (max-width: 959px) {
+    #category div.card {
+      width: 48.5%; } }
+  @media screen and (max-width: 660px) {
+    #category div.card {
+      width: 100%;
+      margin-bottom: 40px; } }
   @media screen and (min-width: 960px) {
-    #category h1 {
-      text-align: left;
-      max-width: 1270px;
-      margin: 0 auto; } }
-
-@media screen and (min-width: 960px) {
-  #category .design-1 {
-    margin: 50px auto;
-    box-sizing: border-box; }
-    #category .design-1 .item {
-      margin-bottom: 25px; }
-      #category .design-1 .item:last-of-type {
-        margin-right: 2%; }
-      #category .design-1 .item:nth-of-type(3n) {
-        margin-right: 0; } }
+    #category div.card:nth-last-of-type(2) {
+      margin-left: 3%; } }
+  @media screen and (min-width: 660px) {
+    #category div.card:last-of-type {
+      margin-left: 3%; } }
 
 #blog-content-area .heading-container {
   padding: 5% 15px 3.5% 15px;
@@ -756,7 +756,7 @@ img {
 .post .share {
   display: flex;
   justify-content: space-around;
-  margin: 0 40px 40px 0; }
+  margin: 0 0 40px 0; }
   .post .share a {
     border: 1px solid #767676;
     padding: 10px;

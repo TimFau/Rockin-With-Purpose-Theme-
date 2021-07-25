@@ -3,10 +3,10 @@
     <div class="container footer">
             <ul class="social-links">
                 <li><a href="https://twitter.com/Rockinwpurpose" aria-label="twitter"><span class="footer-icon">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icons/facebook.svg" />
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icons/facebook.svg" alt="Facebook Icon" />
                 </span></a></li>
                 <li><a href="https://www.facebook.com/RockinWithPurpose/" aria-label="Facebook"><span class="footer-icon">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icons/twitter.svg" />
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icons/twitter.svg" alt="Twitter Icon" />
                 </span></a></li>
             </ul>
             <div class="top-footer">

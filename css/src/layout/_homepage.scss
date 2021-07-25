@@ -90,7 +90,7 @@
                     display: flex;
                     flex-direction: column;
                 }
-                .item-link-container,
+                .item-container,
                 .card-img,
                 .card-desc {
                     width: 100%;
@@ -117,7 +117,7 @@
             width: 100%;
         }
     }
-    .ct-1 .item-link-container {
+    .ct-1 .item-container {
         flex-direction: row;
         justify-content: space-between;
     }

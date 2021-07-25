@@ -2,32 +2,37 @@
 //   Category Page Styling
 // ---------------------------------------------------------------------------------------------------------------------------------
 #category {
-    @media screen and ($bp-960-min) and ($bp-1200) {
-        padding: 0 2.5% 0 2.5%;
+    max-width: $max-width-desktop;
+    margin: 0 auto;
+    > div {
+        padding: 0 35px;
     }
-    h1 {
-        text-align: center;
-        border-bottom: 4px solid $dark-grey;
-        margin: 0;
-        padding: 25px 0;
-        @media screen and ($bp-960-min) {
-            text-align: left;
-            max-width: $max-width-desktop;
-            margin: 0 auto;
+    .heading-box {
+        margin: 50px 0 15px 0;
+        overflow: hidden;
+    }
+    .cat-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    div.card {
+        @media screen and ($bp-960) {
+            width: 48.5%;
         }
-    }
-    .design-1 {
-        @media screen and ($bp-960-min) {
-            margin: 50px auto;
-            box-sizing: border-box;
-            .item {
-                margin-bottom: 25px;
-                &:last-of-type {
-                    margin-right: 2%;
-                }
-                &:nth-of-type(3n) {
-                    margin-right: 0;
-                }
+        @media screen and ($bp-660) {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        // Fix alignment of last row
+        &:nth-last-of-type(2) {
+            @media screen and ($bp-960-min) {
+                margin-left: 3%;
+            }
+        }
+        &:last-of-type {
+            @media screen and ($bp-660-min) {
+                margin-left: 3%;
             }
         }
     }
