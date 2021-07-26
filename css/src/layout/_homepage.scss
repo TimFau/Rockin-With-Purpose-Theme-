@@ -189,11 +189,6 @@
         }
         .albumdesc{
             background: #f6f6f6;
-            a {
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-            }
             h2 {
                 font-size: $fs-medium-large;
                 width: 100%;
@@ -235,6 +230,9 @@
         height: 100%;
         position: relative;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     p {
         @media screen and (max-width: 575px) {
