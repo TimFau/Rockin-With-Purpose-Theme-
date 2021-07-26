@@ -23,7 +23,7 @@ $count = 0;
                 <div class="card full-width item ct-<?php echo $count; ?>">
                     <a href="<?php the_permalink(); ?>" class="item-container">
                         <div class="card-img" data-aos="fade-in" data-aos-duration="600">
-                            <?php the_post_thumbnail('thumbnail'); ?>
+                            <?php the_post_thumbnail('large'); ?>
                         </div>
                         <div class="card-desc" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
                             <h2><?php the_title(); ?></h2>
@@ -38,7 +38,7 @@ $count = 0;
                 // Get Recent Content (exluding previous)
                 $args = array(
                     'post_type' =>  'post',
-                    'posts_per_page'   => 5,
+                    'posts_per_page'   => 3,
                     'post__not_in' => $do_not_duplicate,
                     'category__not_in'  => array( 5 )
                 );
@@ -48,7 +48,7 @@ $count = 0;
                     <!-- <span class="post-category"><?php //the_category(' '); ?></span> -->
                     <a href="<?php the_permalink(); ?>" class="item-container">
                         <div class="card-img" data-aos="fade-in" data-aos-duration="600">
-                            <?php the_post_thumbnail('thumbnail'); ?>
+                            <?php $count === 3 ? the_post_thumbnail('large') : the_post_thumbnail('thumbnail'); ?>
                         </div>
                         <div class="card-desc" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
                             <h2><?php the_title(); ?></h2>

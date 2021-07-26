@@ -2,6 +2,11 @@
     General styles
  --------------------------------------------------------------------------------------- */
 .home {
+    .card h2 {
+        @media screen and (max-width: 1220px) {
+            font-size: $fs-medium-large;
+        }
+    }
     h3 {
         font-size: $fs-medium-large;
     }
@@ -79,7 +84,7 @@
                     margin-left: 50%;
                     transform: translateX(-50%);
                 }
-                @media screen and (min-width: 1021px) {
+                @media screen and (min-width: 1101px) {
                     width: 100%;
                     height: auto;
                 }
@@ -99,18 +104,21 @@
         }
         &.ct-3 {
             @media screen and (min-width: 962px) {
-                width: 65.5%;
+                // width: 65.5%;
             }
         }
-        &.ct-2, &.ct-4, &.ct-5 {
+        &.ct-2, &.ct-3 {
             @media screen and (min-width: 962px) {
                 margin-right: var(--gutter);
             }
         }
         @media screen and (max-width: 961px) {
             width: 48.5%;
-            &.ct-6 {
-                display: none;
+            &.ct-2 {
+                width: 100%;
+            }
+            &.ct-3 {
+                margin-right: 3%;
             }
         }
         @media screen and (max-width: 660px) {
@@ -184,6 +192,7 @@
             a {
                 display: flex;
                 align-items: center;
+                flex-direction: column;
             }
             h2 {
                 font-size: $fs-medium-large;
