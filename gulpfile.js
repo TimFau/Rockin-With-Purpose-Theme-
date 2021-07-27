@@ -6,11 +6,13 @@ var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('sass', function(done) {
     gulp.src('css/src/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer( 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4' ))
     .pipe(concat('style.css'))
     .pipe(gulp.dest('../_RPWordpress1/'))
     .pipe(cleanCSS({compatibility: 'ie8'}))
