@@ -13,10 +13,11 @@
     &.full-width {
         width: 100%;
         .card-img {
-            width: 65%;
+            width: 66%;
         }
-        .card-desc {
-            width: 32%;
+        .card-desc-container {
+            width: 30%;
+            margin: 0 2%;
             box-sizing: border-box;
         }
     }
@@ -28,18 +29,20 @@
     &:hover {
         box-shadow: 1px 1px 7px #00000069;
         background: lighten($light-grey, 55%);
-        h2 {
-            color: $red;
-            text-decoration: underline;
-        }
         img {
             transform: scale(102%);
             filter: brightness(1.2);
         }
     }
     h2 {
-        font-size: $fs-large;
+        font-size: $fs-medium-large;
         transition: color 1s;
+        margin: 0;
+        text-align: center;
+        &:hover {
+            color: $red;
+            text-decoration: underline;
+        }
         @media screen and (max-width: 1050px) {
             font-size: $fs-medium-large;
         }
@@ -47,6 +50,7 @@
     p {
         font-size: $fs-medium-small;
         margin-bottom: 0;
+        text-align: center;
     }
     .card-img {
         overflow: hidden;
@@ -56,30 +60,11 @@
     }
     .card-desc {
         flex-grow: 1;
-        padding: 0 25px 25px 25px;
+        padding: 10px 25px 35px 25px;
     }
     .item-container {
         display: flex;
         flex-direction: column;
         height: 100%;
-    }
-    .post-category {
-        position: absolute;
-        top: 0;
-        left: -0;
-        z-index: 2;
-        a {
-            display: block;
-            text-transform: uppercase;
-            font-size: $fs-small;
-            // background: $dark-grey-transparent;
-            background: $red;
-            color: $white;
-            padding: 10px 15px;
-            &:hover {
-                background: $dark-grey;
-                text-decoration: none;
-            }
-        }
     }
 }

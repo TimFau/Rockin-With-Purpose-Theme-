@@ -110,7 +110,9 @@ img {
 
 .heading-box {
   padding-bottom: 50px;
-  display: flex; }
+  display: flex;
+  width: 100%;
+  overflow: hidden; }
   .heading-box.heading-right {
     justify-content: flex-end; }
     .heading-box.heading-right .hp-heading:after {
@@ -132,18 +134,21 @@ img {
   padding-top: 5px; }
 
 .post-category {
-  margin-bottom: 20px; }
+  display: flex;
+  justify-content: center;
+  margin-top: 25px; }
   .post-category a {
-    background: transparent;
+    display: block;
+    text-transform: uppercase;
+    font-size: 11px;
     color: #993333;
-    padding: 5px 10px;
-    margin: 0 5px;
+    font-weight: 600;
     transition: all 1s;
-    font-weight: 800;
-    text-transform: uppercase; }
+    padding: 5px 7px; }
     .post-category a:hover {
       background: #993333;
-      color: #ffffff; }
+      color: #ffffff;
+      text-decoration: none; }
 
 .nav-bar {
   border-bottom: 1px solid #767676;
@@ -392,9 +397,10 @@ img {
   .card.full-width {
     width: 100%; }
     .card.full-width .card-img {
-      width: 65%; }
-    .card.full-width .card-desc {
-      width: 32%;
+      width: 66%; }
+    .card.full-width .card-desc-container {
+      width: 30%;
+      margin: 0 2%;
       box-sizing: border-box; }
   .card.one-third {
     width: var(--one-third); }
@@ -402,23 +408,26 @@ img {
 .card:hover {
   box-shadow: 1px 1px 7px #00000069;
   background: white; }
-  .card:hover h2 {
-    color: #993333;
-    text-decoration: underline; }
   .card:hover img {
     transform: scale(102%);
     filter: brightness(1.2); }
 
 .card h2 {
-  font-size: 2.8em;
-  transition: color 1s; }
+  font-size: 2em;
+  transition: color 1s;
+  margin: 0;
+  text-align: center; }
+  .card h2:hover {
+    color: #993333;
+    text-decoration: underline; }
   @media screen and (max-width: 1050px) {
     .card h2 {
       font-size: 2em; } }
 
 .card p {
   font-size: 1.2em;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  text-align: center; }
 
 .card .card-img {
   overflow: hidden; }
@@ -427,28 +436,12 @@ img {
 
 .card .card-desc {
   flex-grow: 1;
-  padding: 0 25px 25px 25px; }
+  padding: 10px 25px 35px 25px; }
 
 .card .item-container {
   display: flex;
   flex-direction: column;
   height: 100%; }
-
-.card .post-category {
-  position: absolute;
-  top: 0;
-  left: -0;
-  z-index: 2; }
-  .card .post-category a {
-    display: block;
-    text-transform: uppercase;
-    font-size: 11px;
-    background: #993333;
-    color: #ffffff;
-    padding: 10px 15px; }
-    .card .post-category a:hover {
-      background: #222224;
-      text-decoration: none; }
 
 /* ------------------------------------------------------------------------------------
     General styles
@@ -509,30 +502,23 @@ img {
 .recent-content {
   --gutter: 3%;
   padding: .5%; }
-  .recent-content .item.ct-1 {
-    background: gainsboro; }
-    .recent-content .item.ct-1:hover {
-      background: white; }
-    @media screen and (min-width: 960px) and (max-width: 1100px) {
-      .recent-content .item.ct-1 img {
-        width: auto;
-        height: 100%;
-        margin-left: 50%;
-        transform: translateX(-50%); } }
-    @media screen and (min-width: 1101px) {
-      .recent-content .item.ct-1 img {
-        width: 100%;
-        height: auto; } }
-    @media screen and (max-width: 961px) {
-      .recent-content .item.ct-1 {
+  .recent-content .item.ct-1 img {
+    width: 100%;
+    height: auto; }
+  @media screen and (max-width: 1100px) {
+    .recent-content .item.ct-1 {
+      width: 100%; }
+      .recent-content .item.ct-1 .item-container {
+        display: flex;
+        flex-direction: column; }
+      .recent-content .item.ct-1 .item-container,
+      .recent-content .item.ct-1 .card-img,
+      .recent-content .item.ct-1 .card-desc-container {
         width: 100%; }
-        .recent-content .item.ct-1 a {
-          display: flex;
-          flex-direction: column; }
-        .recent-content .item.ct-1 .item-container,
-        .recent-content .item.ct-1 .card-img,
-        .recent-content .item.ct-1 .card-desc {
-          width: 100%; } }
+      .recent-content .item.ct-1 .card-desc-container {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0 2%; } }
   @media screen and (min-width: 962px) {
     .recent-content .item.ct-2, .recent-content .item.ct-3 {
       margin-right: var(--gutter); } }
@@ -545,7 +531,9 @@ img {
         margin-right: 3%; } }
   @media screen and (max-width: 660px) {
     .recent-content .item {
-      width: 100%; } }
+      width: 100%; }
+      .recent-content .item.ct-3 {
+        margin-right: 0; } }
   .recent-content .ct-1 .item-container {
     flex-direction: row;
     justify-content: space-between; }
@@ -604,7 +592,11 @@ img {
         background: #f6f6f6; }
         .featured-albums div.album .albumdesc h2 {
           font-size: 2em;
-          width: 100%; }
+          width: 100%; } }
+      @media screen and (max-width: 959px) and (max-width: 660px) {
+        .featured-albums div.album .albumdesc h2 {
+          font-size: 1.4em; } }
+  @media screen and (max-width: 959px) {
         .featured-albums div.album .albumdesc h2, .featured-albums div.album .albumdesc p {
           color: #000000; } }
   @media screen and (min-width: 960px) {
@@ -657,18 +649,21 @@ img {
 /* ------------------------------------------
   Artist Spotlight
 --------------------------------------------- */
-.upcoming-artists .heading-box {
+.artist-spotlight .heading-box {
   width: 100%; }
 
-.upcoming-artists .container {
+.artist-spotlight .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1270px;
   margin: 0 auto; }
 
+.artist-spotlight h2 {
+  margin-top: 12px; }
+
 @media screen and (max-width: 960px) {
-  .upcoming-artists .card {
+  .artist-spotlight .card {
     width: 100%; } }
 
 #category {
@@ -683,6 +678,8 @@ img {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start; }
+  #category div.card h2 {
+    margin-top: 15px; }
   @media screen and (min-width: 960px) {
     #category div.card:nth-of-type(3n-1), #category div.card:nth-of-type(3n-2) {
       margin-right: 3%; } }
@@ -696,6 +693,9 @@ img {
       width: 100%;
       margin-bottom: 40px;
       margin-right: 0; } }
+
+#blog-content-area .post-category {
+  margin-bottom: 15px; }
 
 #blog-content-area .heading-container {
   padding: 5% 15px 3.5% 15px;

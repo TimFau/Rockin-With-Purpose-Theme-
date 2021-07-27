@@ -13,6 +13,11 @@ $count = 0;
     <div class="main-content">
         <div class="wrapper">
             <section class="recent-content clearfix">
+                <div class="heading-box">
+                    <a href="category/albums/">
+                        <h3 class="hp-heading hp-heading_hp" data-aos="fade-in">The Latest<span class="line" data-aos="fade-right" data-aos-duration="1000"></span></h3>
+                    </a>
+                </div>
                 <?php
                 // Get Latest Item from 'featured' category
                 $args = array( 'post_type' => 'post', 'posts_per_page'   => 1, 'category_name' =>  'featured');
@@ -21,15 +26,18 @@ $count = 0;
 
                 if( $query_featured->have_posts() ) : while( $query_featured->have_posts() ) : $query_featured->the_post(); $do_not_duplicate[] = $post->ID; $count++; ?>
                 <div class="card full-width item ct-<?php echo $count; ?>">
-                    <a href="<?php the_permalink(); ?>" class="item-container">
-                        <div class="card-img" data-aos="fade-in" data-aos-duration="600">
+                    <div class="item-container">
+                        <a href="<?php the_permalink(); ?>" class="card-img" data-aos="fade-in" data-aos-duration="600">
                             <?php the_post_thumbnail('large'); ?>
+                        </a>
+                        <div class="card-desc-container">
+                            <span class="post-category"><?php the_category(' '); ?></span>
+                            <a href="<?php the_permalink(); ?>" class="card-desc" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
+                                <h2><?php the_title(); ?></h2>
+                                <p><?php echo wp_trim_words( get_the_content(), 40, '...' ); ?></p>
+                            </a>
                         </div>
-                        <div class="card-desc" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
-                            <h2><?php the_title(); ?></h2>
-                            <p><?php echo wp_trim_words( get_the_content(), 40, '...' ); ?></p>
-                        </div>
-                    </a>
+                    </div>
                 </div>
                 <?php endwhile; endif;
                 /* End Get Latest Item from 'featured' category */ ?>
@@ -45,16 +53,16 @@ $count = 0;
                 $query_recent = new WP_Query( $args );
                 if( $query_recent->have_posts() ) : while( $query_recent->have_posts() ) : $query_recent->the_post(); $count++; ?>
                 <div class="card one-third item ct-<?php echo $count; ?>">
-                    <!-- <span class="post-category"><?php //the_category(' '); ?></span> -->
-                    <a href="<?php the_permalink(); ?>" class="item-container">
-                        <div class="card-img" data-aos="fade-in" data-aos-duration="600">
+                    <div class="item-container">
+                        <a href="<?php the_permalink(); ?>" class="card-img" data-aos="fade-in" data-aos-duration="600">
                             <?php $count === 3 ? the_post_thumbnail('large') : the_post_thumbnail('thumbnail'); ?>
-                        </div>
-                        <div class="card-desc" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                        </a>
+                        <span class="post-category"><?php the_category(' '); ?></span>
+                        <a href="<?php the_permalink(); ?>" class="card-desc" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
                             <h2><?php the_title(); ?></h2>
-                            <p><?php echo wp_trim_words( get_the_content(), 40, '...' ); ?></p>
-                        </div>
-                    </a>
+                            <p><?php echo has_excerpt() ? get_the_excerpt() : wp_trim_words( get_the_content(), 10, '...' ); ?></p>
+                        </a>
+                    </div>
                 </div>
                 <?php endwhile; endif; wp_reset_postdata();
                 /* End Get Recent Content */ ?>
@@ -100,7 +108,7 @@ $count = 0;
         </section>
         
         <!-- Upcomming artists -->
-        <section class="upcoming-artists clearfix wrapper">
+        <section class="artist-spotlight clearfix wrapper">
             <div class="container">
                 <div class="heading-box">
                     <a href="category/artist-spotlight/">

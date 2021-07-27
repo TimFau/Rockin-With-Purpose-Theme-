@@ -1,6 +1,8 @@
 .heading-box {
     padding-bottom: 50px;
     display: flex;
+    width: 100%;
+    overflow: hidden;
     &.heading-right {
         justify-content: flex-end;
         .hp-heading {
@@ -32,18 +34,21 @@
     }
 }
 .post-category {
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
     a {
-        background: transparent;
-        color: $red;
-        padding: 5px 10px;
-        margin: 0 5px;
-        transition: all 1s;
-        font-weight: 800;
+        display: block;
         text-transform: uppercase;
+        font-size: $fs-small;
+        color: $red;
+        font-weight: 600;
+        transition: all 1s;
+        padding: 5px 7px;
         &:hover {
             background: $red;
             color: $white;
+            text-decoration: none;
         }
     }
 }
