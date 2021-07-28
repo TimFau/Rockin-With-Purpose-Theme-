@@ -1,38 +1,18 @@
 <?php get_header(); ?>
-<div id="blog-content-area">
-<div class="post-container">
-    <h2 class="hp-heading cat_hp-heading"><?php ($sep = '') ?><br class="dhide"><i class="material-icons dhide">keyboard_arrow_down</i></h2>
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <div class="post page">
-        <p><?php the_content(); ?></p>
-    </div>
-    <?php endwhile; else : ?>
-        <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-    <?php endif; ?>
-</div>
-<!-- Latest Posts / Sidebar -->
-    <?php
-        $args = array(
-            'post_type' => 'post',
-            'posts_per_page'   => 5,
-        );
-        $query_rnb = new WP_Query( $args );
-    ?>
-    <div class="lp_block">
-        <div class="latestposts">
-            <h3  class="hp-heading">Latest Posts<br class="dhide"><i class="material-icons dhide">keyboard_arrow_down</i></h3>
-            <?php if( $query_rnb->have_posts() ) : while( $query_rnb->have_posts() ) : $query_rnb->the_post(); ?>
-            <div class="lpitem">
-                <div class="lpthumb"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a></div>
-                <div class="lpmeta">
-                    <div class="post-category"><?php the_category(' '); ?></div>
-                    <br>
-                    <a href="<?php the_permalink(); ?>"><h2 class="box"><?php the_title(); ?></h2></a>
-                    <div class="lpmetainfo"><p><?php the_author(); ?> | <?php echo get_the_date(); ?></p></div>
-                </div>
-            </div>
-            <?php endwhile; endif; wp_reset_postdata(); ?>
+<div id="page-content-area">
+    <div class="heading-container">
+        <div class="heading-box">
+            <h1 class="hp-heading hp-heading_hp" data-aos="fade-in"><?php the_title(); ?><span class="line" data-aos="fade-right" data-aos-duration="1000"></span></h1>
         </div>
+    </div>
+    <div class="post-container">
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <div class="post page">
+            <p><?php the_content(); ?></p>
+        </div>
+        <?php endwhile; else : ?>
+            <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+        <?php endif; ?>
     </div>
 </div>
 <?php get_footer(); ?>

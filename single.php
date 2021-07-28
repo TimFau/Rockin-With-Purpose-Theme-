@@ -21,12 +21,13 @@
                 <span>Share</span>
                 <div class="share">
                     <?php 
-                        $faceBookShareUrl = "https://www.facebook.com/sharer/sharer.php?u=" . get_post_permalink()
+                        $faceBookShareUrl = "https://www.facebook.com/sharer/sharer.php?u=" . get_post_permalink();
+                        $twitterShareUrl = "https://twitter.com/intent/tweet?url=" . get_post_permalink();
                     ?>
-                    <a href="<?php echo $faceBookShareUrl ?>" target="_blank"  onclick="window.open('<?php echo $faceBookShareUrl ?>'); return false;" aria-label="Facebook"><span class="footer-icon">
+                    <a href="<?php echo $twitterShareUrl ?>" target="_blank" aria-label="Facebook"><span class="footer-icon">
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icons/twitter-black.svg" />
                     </span></a>
-                    <a href="https://twitter.com/intent/tweet?url=<?php echo get_post_permalink(); ?>" target="_blank" aria-label="twitter"><span class="footer-icon">
+                    <a href="<?php echo $faceBookShareUrl; ?>" target="_blank" aria-label="twitter"><span class="footer-icon">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icons/facebook-black.svg" />
                     </span></a>
                 </div>

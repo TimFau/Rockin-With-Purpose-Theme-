@@ -857,3 +857,19 @@ img {
   .post .share img {
     width: 25px;
     height: 25px; }
+
+#page-content-area {
+  margin: 0 auto;
+  padding: 35px;
+  max-width: 1270px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+  #page-content-area .heading-container,
+  #page-content-area .post-container {
+    margin: 0 auto; }
+  #page-content-area .post {
+    padding: 0;
+    margin: 0; }
+  #page-content-area .post > h1,
+  #page-content-area .post > h2 {
+    margin-top: 0; }
