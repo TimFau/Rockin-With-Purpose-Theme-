@@ -14,9 +14,7 @@ $count = 0;
         <div class="wrapper">
             <section class="recent-content clearfix">
                 <div class="heading-box">
-                    <a href="category/albums/">
-                        <h3 class="hp-heading hp-heading_hp" data-aos="fade-in">The Latest<span class="line" data-aos="fade-right" data-aos-duration="1000"></span></h3>
-                    </a>
+                    <h3 class="hp-heading hp-heading_hp" data-aos="fade-in">The Latest<span class="line" data-aos="fade-right" data-aos-duration="1000"></span></h3>
                 </div>
                 <?php
                 // Get Latest Item from 'featured' category
